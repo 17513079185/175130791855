@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git/2021/01/24/vue%E6%8B%A6%E6%88%AA%E5%99%A8/</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/2021/01/24/vue%E6%8B%A6%E6%88%AA%E5%99%A8/</loc>
     
     <lastmod>2021-01-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git/2021/01/21/%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/2021/01/21/%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/</loc>
     
     <lastmod>2021-01-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git/2021/01/21/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/2021/01/21/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -24,7 +24,7 @@
   
 
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog</loc>
     <lastmod>2021-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -32,7 +32,7 @@
 
   
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git/tags/alipay/</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/tags/alipay/</loc>
     <lastmod>2021-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -41,7 +41,7 @@
 
   
   <url>
-    <loc>https://gitee.com/wang-jie-123/wangjie-blog.git/categories/Alipay/</loc>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/categories/Alipay/</loc>
     <lastmod>2021-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
