@@ -6,15 +6,15 @@
   
   <title>vue拦截器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="拦截器分为请求拦截器和响应拦截器">
+  <meta name="description" content="拦截器分为请求拦截器和响应拦截器请求拦截器  比如需要在请求头里加入token 加强安全性     &#x2F;&#x2F; 1、请求拦截—每次向后端发送请求时，在请求头中携带token值  axios.interceptors.request.use(config &#x3D;&gt; {    判断是否存在token    if (sessionStorage.getItem(‘token’)) {      conf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue拦截器">
 <meta property="og:url" content="https://wang-jie-123.gitee.io/wangjie-blog/2021/01/24/vue%E6%8B%A6%E6%88%AA%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="拦截器分为请求拦截器和响应拦截器">
+<meta property="og:description" content="拦截器分为请求拦截器和响应拦截器请求拦截器  比如需要在请求头里加入token 加强安全性     &#x2F;&#x2F; 1、请求拦截—每次向后端发送请求时，在请求头中携带token值  axios.interceptors.request.use(config &#x3D;&gt; {    判断是否存在token    if (sessionStorage.getItem(‘token’)) {      conf">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-24T05:46:16.000Z">
-<meta property="article:modified_time" content="2021-01-25T04:16:00.198Z">
+<meta property="article:modified_time" content="2021-01-25T04:43:14.278Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="拦截器分为请求拦截器和响应拦截器"><a href="#拦截器分为请求拦截器和响应拦截器" class="headerlink" title="拦截器分为请求拦截器和响应拦截器"></a>拦截器分为请求拦截器和响应拦截器</h2>
+        <br>
+
+<h3 id="拦截器分为请求拦截器和响应拦截器"><a href="#拦截器分为请求拦截器和响应拦截器" class="headerlink" title="拦截器分为请求拦截器和响应拦截器"></a>拦截器分为请求拦截器和响应拦截器</h3><h3 id="请求拦截器"><a href="#请求拦截器" class="headerlink" title="请求拦截器"></a>请求拦截器</h3><p>  比如需要在请求头里加入token 加强安全性<br>  <br></p>
+<p>  // 1、请求拦截—每次向后端发送请求时，在请求头中携带token值<br>  axios.interceptors.request.use(config =&gt; {<br>    判断是否存在token<br>    if (sessionStorage.getItem(‘token’)) {<br>      config.headers[‘Authorization’] = sessionStorage.getItem(‘token’)<br>    }<br>  })</p>
+
       
     </div>
     <footer class="article-footer">

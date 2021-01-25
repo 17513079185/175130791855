@@ -97,7 +97,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="拦截器分为请求拦截器和响应拦截器"><a href="#拦截器分为请求拦截器和响应拦截器" class="headerlink" title="拦截器分为请求拦截器和响应拦截器"></a>拦截器分为请求拦截器和响应拦截器</h2>
+        <br>
+
+<h3 id="拦截器分为请求拦截器和响应拦截器"><a href="#拦截器分为请求拦截器和响应拦截器" class="headerlink" title="拦截器分为请求拦截器和响应拦截器"></a>拦截器分为请求拦截器和响应拦截器</h3><h3 id="请求拦截器"><a href="#请求拦截器" class="headerlink" title="请求拦截器"></a>请求拦截器</h3><p>  比如需要在请求头里加入token 加强安全性<br>  <br></p>
+<p>  // 1、请求拦截—每次向后端发送请求时，在请求头中携带token值<br>  axios.interceptors.request.use(config =&gt; {<br>    判断是否存在token<br>    if (sessionStorage.getItem(‘token’)) {<br>      config.headers[‘Authorization’] = sessionStorage.getItem(‘token’)<br>    }<br>  })</p>
+
       
     </div>
     <footer class="article-footer">
