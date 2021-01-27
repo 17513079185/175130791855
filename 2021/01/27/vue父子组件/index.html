@@ -6,15 +6,15 @@
   
   <title>vue父子组件 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="一、在父组件内导入子组件12&lt;script&gt;import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&#x2F;  导入子组件 123components: &amp;#123;    headis: headis,   &#x2F;&#x2F;  挂载组件&amp;#125;">
+  <meta name="description" content="**父子组件概念当前组件a如果挂在了组件b，那么a是b的父组件，b是a的子组件。父子组件的特点是相对来说的，相对于子组件来说父组件，相对于父组件来说子组件。 一、在父组件内导入子组件12&lt;script&gt;import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue父子组件">
 <meta property="og:url" content="https://wang-jie-123.gitee.io/wangjie-blog/2021/01/27/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、在父组件内导入子组件12&lt;script&gt;import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&#x2F;  导入子组件 123components: &amp;#123;    headis: headis,   &#x2F;&#x2F;  挂载组件&amp;#125;">
+<meta property="og:description" content="**父子组件概念当前组件a如果挂在了组件b，那么a是b的父组件，b是a的子组件。父子组件的特点是相对来说的，相对于子组件来说父组件，相对于父组件来说子组件。 一、在父组件内导入子组件12&lt;script&gt;import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&amp;#x">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-27T03:55:20.988Z">
-<meta property="article:modified_time" content="2021-01-27T09:17:56.859Z">
+<meta property="article:modified_time" content="2021-01-27T09:23:30.217Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
@@ -100,12 +100,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="一、在父组件内导入子组件"><a href="#一、在父组件内导入子组件" class="headerlink" title="一、在父组件内导入子组件"></a>一、在父组件内导入子组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&#x2F;  导入子组件</span><br></pre></td></tr></table></figure>
+        <h2 id="父子组件概念"><a href="#父子组件概念" class="headerlink" title="**父子组件概念"></a>**父子组件概念</h2><p>当前组件a如果挂在了组件b，那么a是b的父组件，b是a的子组件。<br>父子组件的特点是相对来说的，相对于子组件来说父组件，相对于父组件来说子组件。</p>
+<h4 id="一、在父组件内导入子组件"><a href="#一、在父组件内导入子组件" class="headerlink" title="一、在父组件内导入子组件"></a>一、在父组件内导入子组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&#x2F;  导入子组件</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    headis: headis,   &#x2F;&#x2F;  挂载组件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h4 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h4><p>在<body>中通过<div>去调用子组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">   		 &lt;headis&gt;&lt;&#x2F;headis&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h4><p>在body中通过div去调用子组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">   &lt;headis&gt;&lt;&#x2F;headis&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
 
 
 <h4 id="三、父组件传参给子组件"><a href="#三、父组件传参给子组件" class="headerlink" title="三、父组件传参给子组件"></a>三、父组件传参给子组件</h4><p>组件调用子组件的时候 绑定动态属性</p>
