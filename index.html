@@ -97,7 +97,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h4 id="一、在父组件内导入子组件"><a href="#一、在父组件内导入子组件" class="headerlink" title="一、在父组件内导入子组件"></a>一、在父组件内导入子组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import headis from &quot;@&#x2F;view&#x2F;course&#x2F;components&#x2F;header&quot;; &#x2F;&#x2F;  导入子组件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    headis: headis,   &#x2F;&#x2F;  挂载组件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h4><p>在<body>中通过<div>去调用子组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">   		 &lt;headis&gt;&lt;&#x2F;headis&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="三、父组件传参给子组件"><a href="#三、父组件传参给子组件" class="headerlink" title="三、父组件传参给子组件"></a>三、父组件传参给子组件</h4><p>组件调用子组件的时候 绑定动态属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;headis :course_list&#x3D;&quot;course_list&quot;&gt;&lt;&#x2F;headis&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="四、子组件接收参数"><a href="#四、子组件接收参数" class="headerlink" title="四、子组件接收参数"></a>四、子组件接收参数</h4><p>在子组件里通过props来接收父组件传递的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props:[&#39;course_list&#39;,]</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
