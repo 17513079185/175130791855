@@ -71,6 +71,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-axios封装" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/wangjie-blog/2021/01/31/axios%E5%B0%81%E8%A3%85/" class="article-date">
+  <time class="dt-published" datetime="2021-01-31T03:24:39.545Z" itemprop="datePublished">2021-01-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/wangjie-blog/2021/01/31/axios%E5%B0%81%E8%A3%85/">axios封装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="axios的封装"><a href="#axios的封装" class="headerlink" title="axios的封装"></a>axios的封装</h3><h4 id="1-安装axios"><a href="#1-安装axios" class="headerlink" title="1.安装axios"></a>1.安装axios</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios &#x2F;&#x2F;安装axios</span><br></pre></td></tr></table></figure>
+<h4 id="2-在项目中新建一个index-js"><a href="#2-在项目中新建一个index-js" class="headerlink" title="2.在项目中新建一个index.js"></a>2.在项目中新建一个index.js</h4><h4 id="3-引入-import-axios-from-“axios”"><a href="#3-引入-import-axios-from-“axios”" class="headerlink" title="3.引入  import axios from “axios”"></a>3.引入  import axios from “axios”</h4><h4 id="4-封装get方法"><a href="#4-封装get方法" class="headerlink" title="4.封装get方法"></a>4.封装get方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  url请求路径 params参数</span><br><span class="line">export function get(url, params, headers) &#123;</span><br><span class="line">  return new Promise((resolve, reject) &#x3D;&gt; &#123;</span><br><span class="line">    axios.get(url, &#123;params, headers&#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">      resolve(res)</span><br><span class="line">    &#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-post的响应方式就是换成data"><a href="#5-post的响应方式就是换成data" class="headerlink" title="5.post的响应方式就是换成data"></a>5.post的响应方式就是换成data</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export function post(url, data&#x3D;&#123;&#125;) &#123;</span><br><span class="line">  return new Promise((resolve, reject) &#x3D;&gt; &#123;</span><br><span class="line">    axios.post(url,data,params, headers).then((res) 	&#x3D;&gt; &#123;</span><br><span class="line">      resolve(res)</span><br><span class="line">    &#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">      &#x2F;&#x2F; debugger</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-封装put方法"><a href="#6-封装put方法" class="headerlink" title="6.封装put方法"></a>6.封装put方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export function put(url, params, headers) &#123;</span><br><span class="line"> return new Promise((resolve, reject) &#x3D;&gt; &#123;</span><br><span class="line">  axios.put(url, params, headers).then((res) &#x3D;&gt; &#123;</span><br><span class="line">   resolve(res)</span><br><span class="line">  &#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">   &#x2F;&#x2F; debugger</span><br><span class="line">   reject(err)</span><br><span class="line">  &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="7-封装del方法"><a href="#7-封装del方法" class="headerlink" title="7.封装del方法"></a>7.封装del方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export function del(url, params, headers) &#123;</span><br><span class="line">  return new Promise((resolve, reject) &#x3D;&gt; &#123;</span><br><span class="line">    axios.delete(url, &#123;data: params, headers&#125;).then((res) &#x3D;&gt; &#123;</span><br><span class="line">      resolve(res)</span><br><span class="line">    &#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">      &#x2F;&#x2F; debugger</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-axios接口的调用方式"><a href="#8-axios接口的调用方式" class="headerlink" title="8. axios接口的调用方式"></a>8. axios接口的调用方式</h4><p>​    axios封装好之后，调用就很简单了。我们把接口统一写在api.js文件里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 编写封装好的请求</span><br><span class="line">import &#123;get,post,put,del&#125; from &#39;.&#x2F;index&#39;</span><br><span class="line"></span><br><span class="line">export const signUp &#x3D; (params) &#x3D;&gt; &#123;</span><br><span class="line">    return post(</span><br><span class="line">        &#39;userapp&#x2F;signup&#x2F;&#39;,</span><br><span class="line">        params</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wang-jie-123.gitee.io/wangjie-blog/2021/01/31/axios%E5%B0%81%E8%A3%85/" data-id="ckkkop1d00000acuk88dv89xo" data-title="axios封装" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/wangjie-blog/tags/alipay/" rel="tag">alipay</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-celery异步框架" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/wangjie-blog/2021/01/30/celery%E5%BC%82%E6%AD%A5%E6%A1%86%E6%9E%B6/" class="article-date">
@@ -483,6 +535,10 @@
       <ul>
         
           <li>
+            <a href="/wangjie-blog/2021/01/31/axios%E5%B0%81%E8%A3%85/">axios封装</a>
+          </li>
+        
+          <li>
             <a href="/wangjie-blog/2021/01/30/celery%E5%BC%82%E6%AD%A5%E6%A1%86%E6%9E%B6/">celery异步框架</a>
           </li>
         
@@ -496,10 +552,6 @@
         
           <li>
             <a href="/wangjie-blog/2021/01/27/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6/">vue父子组件</a>
-          </li>
-        
-          <li>
-            <a href="/wangjie-blog/2021/01/26/vue%E8%B7%AF%E7%94%B1%E9%92%A9%E5%AD%90/">vue路由钩子</a>
           </li>
         
       </ul>
