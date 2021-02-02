@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/</loc>
+    
+    <lastmod>2021-02-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/2021/02/01/redis%E5%8F%91%E5%B8%83%E8%80%85%E8%AE%A2%E9%98%85%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2021-02-01</lastmod>
@@ -60,7 +67,7 @@
 
   <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,7 +75,7 @@
   
   <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/tags/alipay/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -77,7 +84,7 @@
   
   <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/categories/Alipay/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
