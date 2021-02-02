@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="redis键空间事件, 志杰的Blog">
+    <meta name="keywords" content="Redis键空间事件, 志杰的Blog">
     <meta name="description" content="这是志杰的Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>redis键空间事件 | 志杰的Blog</title>
+    <title>Redis键空间事件 | 志杰的Blog</title>
     <link rel="icon" type="image/png" href="/wangjie-blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wangjie-blog/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">redis键空间事件</h1>
+                    <h1 class="description center-align post-title">Redis键空间事件</h1>
                 </div>
             </div>
         </div>
@@ -477,11 +477,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Redis键空间通知事件"><a href="#1-Redis键空间通知事件" class="headerlink" title="1.Redis键空间通知事件"></a>1.Redis键空间通知事件</h3><p>键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件</p>
-<h3 id="2-开启键空间通知"><a href="#2-开启键空间通知" class="headerlink" title="2.开启键空间通知"></a>2.开启键空间通知</h3><p>因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。</p>
+                <h3 id="1-Redis键空间通知事件"><a href="#1-Redis键空间通知事件" class="headerlink" title="1. Redis键空间通知事件"></a>1. Redis键空间通知事件</h3><p>键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件</p>
+<h3 id="2-开启键空间通知"><a href="#2-开启键空间通知" class="headerlink" title="2. 开启键空间通知"></a>2. 开启键空间通知</h3><p>因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。</p>
 <p>可以通过修改<code>redis.conf</code> 文件， 或者直接使用 <code>CONFIG SET</code> 命令来开启或关闭键空间通知功能：</p>
 <p>当 <code>notify-keyspace-events</code> 选项的参数为空字符串时，功能关闭。</p>
 <p>另一方面，当参数不是空字符串时，功能开启。</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">发送的通知</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">K</td>
+<td align="left">键空间通知，所有通知以 <code>__keyspace@__</code>为前缀</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">键事件通知，所有通知以 <code>__keyevent@__</code> 为前缀</td>
+</tr>
+<tr>
+<td align="left">g</td>
+<td align="left">DEL 、 EXPIRE 、 RENAME 等类型无关的通用命令的通知</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">字符串命令的通知</td>
+</tr>
+<tr>
+<td align="left">l</td>
+<td align="left">列表命令的通知</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">集合命令的通知</td>
+</tr>
+<tr>
+<td align="left">h</td>
+<td align="left">哈希命令的通知</td>
+</tr>
+<tr>
+<td align="left">z</td>
+<td align="left">有序集合命令的通知</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left">过期事件：每当有过期键被删除时发送</td>
+</tr>
+<tr>
+<td align="left">e</td>
+<td align="left">驱逐(evict)事件：每当有键因为 maxmemory 政策而被删除时发送</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">参数 g$lshzxe 的别名</td>
+</tr>
+</tbody></table>
+<h3 id="3-Key过期事件的Redis配置"><a href="#3-Key过期事件的Redis配置" class="headerlink" title="3. Key过期事件的Redis配置"></a>3. Key过期事件的Redis配置</h3><p>这里需要配置 notify-keyspace-events 的参数为 “Ex”。x 代表了过期事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notify-keyspace-events &quot;Ex&quot;</span><br></pre></td></tr></table></figure>
+<p>保存配置后，重启Redis服务</p>
+<h3 id="4-添加过期事件订阅"><a href="#4-添加过期事件订阅" class="headerlink" title="4. 添加过期事件订阅"></a>4. 添加过期事件订阅</h3><p>开启一个终端，redis-cli 进入 redis 。开始订阅所有操作，等待接收消息。<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg"></p>
+<p>再开启一个终端，redis-cli 进入 redis，新增一个 15秒过期的键 name<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg"></p>
+<p>15秒过期时间到时，另外一边执行了阻塞订阅操作后的终端，有如下信息输<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg"></p>
+<p>顺利获取到过期键 name，说明对过期Key信息的订阅是成功的</p>
 
                 
             </div>
@@ -728,9 +787,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/8.jpg" class="responsive-img" alt="redis键空间事件">
+                        <img src="/wangjie-blog/medias/featureimages/16.jpg" class="responsive-img" alt="Redis键空间事件">
                         
-                        <span class="card-title">redis键空间事件</span>
+                        <span class="card-title">Redis键空间事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,9 +837,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/16.jpg" class="responsive-img" alt="redis发布者订阅者模式">
+                        <img src="/wangjie-blog/medias/featureimages/16.jpg" class="responsive-img" alt="Redis发布者订阅者模式">
                         
-                        <span class="card-title">redis发布者订阅者模式</span>
+                        <span class="card-title">Redis发布者订阅者模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
