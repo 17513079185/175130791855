@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Webshell, 志杰的Blog">
+    <meta name="keywords" content="无限极分类, 志杰的Blog">
     <meta name="description" content="这是志杰的Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Webshell | 志杰的Blog</title>
+    <title>无限极分类 | 志杰的Blog</title>
     <link rel="icon" type="image/png" href="/wangjie-blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wangjie-blog/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Webshell</h1>
+                    <h1 class="description center-align post-title">无限极分类</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-04
                 </div>
                 
 
@@ -477,27 +477,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、什么是webshell"><a href="#一、什么是webshell" class="headerlink" title="一、什么是webshell"></a>一、什么是webshell</h2><ul>
-<li><p>webshell简介</p>
-<p>webshell，顾名思义：web指的是web服务器上，而shell，是用脚本语言编写的脚本程序，webshell就是web的一个管理工具，可以对web服务器进行操作的权限，也叫webadmin。webshell一般是被网站管理员用于网站管理、服务器管理等等一些用途，但是由于webshell的功能比较强大，可以上传下载文件，查看数据库，甚至可以调用一些服务器上系统的相关命令，通常被黑客利用，黑客通过一些上传方式，将自己编写的webshell上传到web服务器的页面的目录下，然后通过页面访问的形式进行入侵，或者通过插入一句话连接本地的一些相关工具直接对服务器进行入侵操作。  </p>
-</li>
-<li><p>webshell分类</p>
-<p>webshell根据脚本可以分为PHP脚本木马，ASP脚本木马，也有基于.NET的脚本木马和JSP脚本木马。在国外，还有用python脚本语言写的动态网页，当然也有与之相关的webshell。<br>根据功能也分为大马与小马，小马通常指的一句话木马，例如：&lt;%eval request(“pass”)%&gt;通常把这句话写入一个文档里面，然后文件名改成xx.asp。然后传到服务器上面。这里eval方法将request(“pass”)转换成代码执行，request函数的作用是应用外部文件。这相当于一句话木马的客户端配置。  </p>
-</li>
-</ul>
-<h2 id="二、实践"><a href="#二、实践" class="headerlink" title="二、实践"></a>二、实践</h2><p>使用webshell在浏览器实现黑窗口</p>
-<h4 id="2-1-首先下载"><a href="#2-1-首先下载" class="headerlink" title="2.1 首先下载"></a>2.1 首先下载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install xterm@3.1.0 –save</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-在Vue页面中导入包"><a href="#2-2-在Vue页面中导入包" class="headerlink" title="2.2 在Vue页面中导入包"></a>2.2 在Vue页面中导入包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import * as attach from &quot;xterm&#x2F;lib&#x2F;addons&#x2F;attach&#x2F;attach&quot;; &#x2F;&#x2F; 安装插件可以使用attach添加</span><br><span class="line">import * as fit from &quot;xterm&#x2F;lib&#x2F;addons&#x2F;fit&#x2F;fit&quot;; &#x2F;&#x2F;  黑窗口可以自适度屏幕大小</span><br><span class="line">import &#123; coursedetail &#125; from &quot;@&#x2F;http&#x2F;api&quot;; &#x2F;&#x2F;  导入请求</span><br><span class="line"></span><br><span class="line">Terminal.applyAddon(attach); &#x2F;&#x2F; 添加插件</span><br><span class="line">Terminal.applyAddon(fit); &#x2F;&#x2F; 插件</span><br></pre></td></tr></table></figure>
+                <h2 id="实践操作"><a href="#实践操作" class="headerlink" title="实践操作"></a>实践操作</h2><h4 id="1-首先创建模型表"><a href="#1-首先创建模型表" class="headerlink" title="1. 首先创建模型表"></a>1. 首先创建模型表</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">class CaiModel(models.Model):</span></span><br><span class="line"><span class="xml">    name = models.CharField(max_length=200)</span></span><br><span class="line"><span class="xml">    par = models.ForeignKey(&#x27;self&#x27;, on_delete=models.SET_NULL, null=True, blank=True)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def __str__(self):</span></span><br><span class="line"><span class="xml">        return self.name</span></span><br></pre></td></tr></table></figure>
 
 
-<h4 id="2-3-初始化div对象"><a href="#2-3-初始化div对象" class="headerlink" title="2.3 初始化div对象"></a>2.3 初始化div对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    &#x2F;&#x2F;  获取div标签</span><br><span class="line">    let terminalLcontainer &#x3D; document.getElementById(&quot;terminal&quot;);</span><br><span class="line">    &#x2F;&#x2F;  初始化对象</span><br><span class="line">    this.term &#x3D; new Terminal(this.termail);</span><br><span class="line">    &#x2F;&#x2F;  打开对象</span><br><span class="line">    this.term.open(terminalLcontainer); </span><br><span class="line"> </span><br><span class="line">    this.terminalSocket &#x3D; new WebSocket(&quot;ws:&#x2F;&#x2F;127.0.0.1:8000&#x2F;course&#x2F;webssh&#x2F;&quot;);</span><br><span class="line">    this.terminalSocket.onopen &#x3D; function() &#123;</span><br><span class="line">      &#x2F;&#x2F; 连接成功触发该方法</span><br><span class="line">      this.term_status &#x3D; true</span><br><span class="line">      console.log(&quot;websocket is Connected...&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    this.terminalSocket.onclose &#x3D; function() &#123;</span><br><span class="line">      &#x2F;&#x2F; 连接关闭适触发的方法</span><br><span class="line">      console.log(&quot;websocket is Closed...&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    this.terminalSocket.onerror &#x3D; function() &#123;</span><br><span class="line">      &#x2F;&#x2F; 连接出错触发的方法</span><br><span class="line">      console.log(&quot;damn Websocket is broken!&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    this.term.attach(this.terminalSocket)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-序列化器"><a href="#2-序列化器" class="headerlink" title="2. 序列化器"></a>2. 序列化器</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">from rest_framework import serializers</span></span><br><span class="line"><span class="xml">from app1.models import CaiModel</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml">class CaiSerializers(serializers.ModelSerializer):</span></span><br><span class="line"><span class="xml">    class Meta:</span></span><br><span class="line"><span class="xml">        model = CaiModel</span></span><br><span class="line"><span class="xml">        fields = &#x27;__all__&#x27;</span></span><br></pre></td></tr></table></figure>
 
 
-<h4 id="2-4-下载dwebsocket"><a href="#2-4-下载dwebsocket" class="headerlink" title="2.4 下载dwebsocket"></a>2.4 下载dwebsocket</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">pip install dwebsocket</span></span><br></pre></td></tr></table></figure>
-<p>在settings中配置<br><img src="/wangjie-blog/2021/02/03/Webshell/4.1.jpg"></p>
-<h4 id="2-5-初始化一个ssh对象"><a href="#2-5-初始化一个ssh对象" class="headerlink" title="2.5 初始化一个ssh对象"></a>2.5 初始化一个ssh对象</h4><p><img src="/wangjie-blog/2021/02/03/Webshell/4.2.jpg"></p>
-<h4 id="2-6-建立ssh连接通道"><a href="#2-6-建立ssh连接通道" class="headerlink" title="2.6 建立ssh连接通道"></a>2.6 建立ssh连接通道</h4><p><img src="/wangjie-blog/2021/02/03/Webshell/4.4.jpg"></p>
-<h4 id="2-7-启动"><a href="#2-7-启动" class="headerlink" title="2.7 启动"></a>2.7 启动</h4><p><img src="/wangjie-blog/2021/02/03/Webshell/4.3.jpg"></p>
+<h4 id="3-写一个递归的方法"><a href="#3-写一个递归的方法" class="headerlink" title="3. 写一个递归的方法"></a>3. 写一个递归的方法</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">def xTree(datas):</span></span><br><span class="line"><span class="xml">    lists = []  # 定义空列表</span></span><br><span class="line"><span class="xml">    tree = &#123;&#125;  # 定义空字典</span></span><br><span class="line"><span class="xml">    for i in datas:</span></span><br><span class="line"><span class="xml">        item = i</span></span><br><span class="line"><span class="xml">        tree[item[&#x27;id&#x27;]] = item</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    for i in datas:</span></span><br><span class="line"><span class="xml">        obj = i</span></span><br><span class="line"><span class="xml">        if not obj[&#x27;par&#x27;]:</span></span><br><span class="line"><span class="xml">            root = tree[obj[&#x27;id&#x27;]]</span></span><br><span class="line"><span class="xml">            lists.append(root)</span></span><br><span class="line"><span class="xml">        else:</span></span><br><span class="line"><span class="xml">            parent_id = obj[&#x27;par&#x27;]</span></span><br><span class="line"><span class="xml">            if &#x27;childlist&#x27; not in tree[parent_id]:</span></span><br><span class="line"><span class="xml">                tree[parent_id][&#x27;childlist&#x27;] = []</span></span><br><span class="line"><span class="xml">            tree[parent_id][&#x27;childlist&#x27;].append(tree[obj[&#x27;id&#x27;]])</span></span><br><span class="line"><span class="xml">    return lists</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4-写一个视图函数-接收数据"><a href="#4-写一个视图函数-接收数据" class="headerlink" title="4. 写一个视图函数, 接收数据"></a>4. 写一个视图函数, 接收数据</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">class MyTree(APIView):</span></span><br><span class="line"><span class="xml">    def get(self, request):</span></span><br><span class="line"><span class="xml">        &quot;&quot;&quot;</span></span><br><span class="line"><span class="xml">        查找</span></span><br><span class="line"><span class="xml">        :param request:</span></span><br><span class="line"><span class="xml">        :return:</span></span><br><span class="line"><span class="xml">        &quot;&quot;&quot;</span></span><br><span class="line"><span class="xml">        cai = CaiModel.objects.all()</span></span><br><span class="line"><span class="xml">        ser = CaiSerializers(cai, many=True)</span></span><br><span class="line"><span class="xml">        data = xTree(ser.data)</span></span><br><span class="line"><span class="xml">        return Response(data)</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="5-实现"><a href="#5-实现" class="headerlink" title="5. 实现"></a>5. 实现</h4><p><img src="/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/5.1.jpg"></p>
 
                 
             </div>
@@ -524,7 +516,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/03/Webshell/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/03/Webshell/</a>
+                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -735,9 +727,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/">
                     <div class="card-image">
@@ -755,9 +748,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -770,6 +763,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -788,13 +782,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/">
+                <a href="/wangjie-blog/2021/02/03/Webshell/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/16.jpg" class="responsive-img" alt="Redis键空间事件">
+                        <img src="/wangjie-blog/medias/featureimages/12.jpg" class="responsive-img" alt="Webshell">
                         
-                        <span class="card-title">Redis键空间事件</span>
+                        <span class="card-title">Webshell</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,7 +799,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
                             </span>
                         <span class="publish-author">
                             
