@@ -513,17 +513,23 @@
 <li>   最后开启服务</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx-flv&#x2F;sbin&#x2F;nginx -c &#x2F;usr&#x2F;local&#x2F;nginx-flv&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
-<h3 id="三、Vue实现拉流"><a href="#三、Vue实现拉流" class="headerlink" title="三、Vue实现拉流"></a>三、Vue实现拉流</h3></li>
+<h3 id="三、Vue实现拉流"><a href="#三、Vue实现拉流" class="headerlink" title="三、Vue实现拉流"></a>三、Vue实现拉流</h3><pre><code>  *  安装**flv.js**开源工具</code></pre>
+</li>
 </ul>
-<p>安装<strong>flv.js</strong>开源工具</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install flv.js --save</span><br></pre></td></tr></table></figure>
-<p>导入</p>
+<ul>
+<li> 导入</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import flv from &#39;flv.js&#39;</span><br></pre></td></tr></table></figure>
-<p>构建页面标签</p>
+<ul>
+<li> 构建页面标签</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;video id&#x3D;&quot;videoElement&quot; controls muted&gt;</span><br><span class="line">	pass</span><br><span class="line">&lt;&#x2F;video&gt;</span><br></pre></td></tr></table></figure>
-<p>初始化</p>
+<ul>
+<li> 初始化</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> mounted() &#123;</span><br><span class="line">    var videoElement &#x3D; document.getElementById(&#39;videoElement&#39;);</span><br><span class="line">    var flvPlayer &#x3D; flv.createPlayer(&#123;</span><br><span class="line">      type: &#39;flv&#39;,</span><br><span class="line">      enableWorker: true,     &#x2F;&#x2F;浏览器端开启flv.js的worker,多进程运行flv.js</span><br><span class="line">      isLive: true,           &#x2F;&#x2F;直播模式</span><br><span class="line">      hasAudio: false,        &#x2F;&#x2F;关闭音频</span><br><span class="line">      hasVideo: true,</span><br><span class="line">      &#x2F;&#x2F; cors: true,</span><br><span class="line">      stashInitialSize: 128,</span><br><span class="line">      enableStashBuffer: false, &#x2F;&#x2F;播放flv时，设置是否启用播放缓存，只在直播起作用。</span><br><span class="line">      url: &#39;http:&#x2F;&#x2F;47.93.48.154:8080&#x2F;live?port&#x3D;1935&amp;app&#x3D;live&amp;stream&#x3D;test&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">    flvPlayer.attachMediaElement(videoElement);</span><br><span class="line">    flvPlayer.load();</span><br><span class="line">    flvPlayer.play();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="最终在浏览器实现直播效果"><a href="#最终在浏览器实现直播效果" class="headerlink" title="最终在浏览器实现直播效果"></a>最终在浏览器实现直播效果</h4><p><img src="/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/6.2.jpg"></p>
+<h3 id="四、最终在浏览器实现直播效果"><a href="#四、最终在浏览器实现直播效果" class="headerlink" title="四、最终在浏览器实现直播效果"></a>四、最终在浏览器实现直播效果</h3><p><img src="/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/6.2.jpg"></p>
 
                 
             </div>
