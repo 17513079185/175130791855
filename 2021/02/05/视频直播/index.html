@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="无限极分类, 志杰的Blog">
+    <meta name="keywords" content="视频直播, 志杰的Blog">
     <meta name="description" content="这是志杰的Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>无限极分类 | 志杰的Blog</title>
+    <title>视频直播 | 志杰的Blog</title>
     <link rel="icon" type="image/png" href="/wangjie-blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wangjie-blog/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">无限极分类</h1>
+                    <h1 class="description center-align post-title">视频直播</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-04
+                    2021-02-05
                 </div>
                 
 
@@ -477,20 +477,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>无限极分类简单点说就是一个类可以分成多个子类，然后一个子类又可以分另外多个子类这样无限分下去，就好象windows可以新建一个文件夹，然后在这个文件夹里又可以建一些个文件夹，在文件夹底下还可以建一些文件夹一样</p>
-<h2 id="实践操作"><a href="#实践操作" class="headerlink" title="实践操作"></a>实践操作</h2><h4 id="1-首先创建模型表"><a href="#1-首先创建模型表" class="headerlink" title="1. 首先创建模型表"></a>1. 首先创建模型表</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">class CaiModel(models.Model):</span></span><br><span class="line"><span class="xml">    name = models.CharField(max_length=200)</span></span><br><span class="line"><span class="xml">    par = models.ForeignKey(&#x27;self&#x27;, on_delete=models.SET_NULL, null=True, blank=True)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def __str__(self):</span></span><br><span class="line"><span class="xml">        return self.name</span></span><br></pre></td></tr></table></figure>
+                <h3 id="一、首先如何实现直播"><a href="#一、首先如何实现直播" class="headerlink" title="一、首先如何实现直播"></a>一、首先如何实现直播</h3><ul>
+<li>需要打开OBS,设置推流地址和密钥</li>
+</ul>
+<p><img src="/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/6.1.jpg"></p>
+<ul>
+<li>这样用户打开浏览器会对应直播地址</li>
+<li></li>
+</ul>
+<h3 id="二、HTTP-FLV环境部署"><a href="#二、HTTP-FLV环境部署" class="headerlink" title="二、HTTP-FLV环境部署"></a>二、HTTP-FLV环境部署</h3><ul>
+<li><p>创建保存软件文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home</span><br><span class="line">mkdir Environment</span><br></pre></td></tr></table></figure></li>
+<li><p> 下载nginx</p>
+<ul>
+<li>   nginx可以使你支持多个用户同时连接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.18.0.tar.gz </span><br></pre></td></tr></table></figure></li>
+<li><p> 下载直播模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;winshining&#x2F;nginx-http-flv-module</span><br></pre></td></tr></table></figure></li>
+<li><p> 解压nginx和rtmp模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.18.0.tar.gz </span><br><span class="line">	</span><br><span class="line">unzip nginx-http-flv-module</span><br></pre></td></tr></table></figure></li>
+<li><p> 创建nginx的安装目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;nginx-rtmp</span><br></pre></td></tr></table></figure></li>
+<li><p> 进入解压好的nginx目录,进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd nginx-1.18.0</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx-flv --add-module&#x3D;&#x2F;home&#x2F;flv-tools&#x2F;nginx-http-flv-module</span><br><span class="line">#--prefix: 安装路径</span><br><span class="line">#--add-module: 装插件</span><br></pre></td></tr></table></figure></li>
+<li><p> 编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install </span><br></pre></td></tr></table></figure></li>
+<li><p> 配置文件修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx-flv&#x2F;conf</span><br></pre></td></tr></table></figure>
+<p>进入目录找到nginx.conf</p>
+<p>vim修改</p>
+<h4 id="配置文件部分"><a href="#配置文件部分" class="headerlink" title="配置文件部分"></a>配置文件部分</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">rtmp_auto_push on;</span><br><span class="line">rtmp_auto_push_reconnect 1s;</span><br><span class="line">rtmp_socket_dir &#x2F;tmp;</span><br><span class="line"></span><br><span class="line">rtmp&#123;</span><br><span class="line">	out_queue 4096;</span><br><span class="line">	out_cork 8;</span><br><span class="line">	max_streams 128;</span><br><span class="line">	timeout 15s;</span><br><span class="line">	drop_idle_publisher 15s;</span><br><span class="line">	log_interval 5s;</span><br><span class="line">	log_size 1m;</span><br><span class="line">	server &#123;</span><br><span class="line">		listen 1935; # 推流端口</span><br><span class="line">		server_name zege;</span><br><span class="line">		</span><br><span class="line">		application live &#123;	# 配置推流地址</span><br><span class="line">			live on; # 打开推流</span><br><span class="line">			# gop_cache on;</span><br><span class="line">			# rtmp:&#x2F;&#x2F;123.123.123.123:1935&#x2F;live&#x2F;test</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="配置文件http拉流部分"><a href="#配置文件http拉流部分" class="headerlink" title="配置文件http拉流部分"></a>配置文件http拉流部分</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	include       mime.types;</span><br><span class="line">	default_type  application&#x2F;octet-stream;</span><br><span class="line">	sendfile        on;</span><br><span class="line">	keepalive_timeout  65;</span><br><span class="line">	server &#123;</span><br><span class="line">		listen       8080; # 拉流通过8080去拉流</span><br><span class="line">		# http:&#x2F;&#x2F;123.123.123.123:8080&#x2F;live&#x2F;?port&#x3D;1935&amp;stream&#x3D;test</span><br><span class="line">		server_name  localhost;</span><br><span class="line">		location &#x2F;live &#123;</span><br><span class="line">			flv_live on;</span><br><span class="line">			chunked_transfer_encoding  on;</span><br><span class="line">			add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;</span><br><span class="line">			add_header &#39;Access-Control-Allow-Credentials&#39; &#39;true&#39;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>   最后开启服务</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx-flv&#x2F;sbin&#x2F;nginx -c &#x2F;usr&#x2F;local&#x2F;nginx-flv&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+<h3 id="三、Vue实现拉流"><a href="#三、Vue实现拉流" class="headerlink" title="三、Vue实现拉流"></a>三、Vue实现拉流</h3></li>
+</ul>
+<p>安装<strong>flv.js</strong>开源工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install flv.js --save</span><br></pre></td></tr></table></figure>
+<p>导入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import flv from &#39;flv.js&#39;</span><br></pre></td></tr></table></figure>
+<p>构建页面标签</p>
+<video id="videoElement" controls muted>
+    pass
+</video>
 
-
-<h4 id="2-序列化器"><a href="#2-序列化器" class="headerlink" title="2. 序列化器"></a>2. 序列化器</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">from rest_framework import serializers</span></span><br><span class="line"><span class="xml">from app1.models import CaiModel</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml">class CaiSerializers(serializers.ModelSerializer):</span></span><br><span class="line"><span class="xml">    class Meta:</span></span><br><span class="line"><span class="xml">        model = CaiModel</span></span><br><span class="line"><span class="xml">        fields = &#x27;__all__&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-<h4 id="3-写一个递归的方法"><a href="#3-写一个递归的方法" class="headerlink" title="3. 写一个递归的方法"></a>3. 写一个递归的方法</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">def xTree(datas):</span></span><br><span class="line"><span class="xml">    lists = []  # 定义空列表</span></span><br><span class="line"><span class="xml">    tree = &#123;&#125;  # 定义空字典</span></span><br><span class="line"><span class="xml">    for i in datas:</span></span><br><span class="line"><span class="xml">        item = i</span></span><br><span class="line"><span class="xml">        tree[item[&#x27;id&#x27;]] = item</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    for i in datas:</span></span><br><span class="line"><span class="xml">        obj = i</span></span><br><span class="line"><span class="xml">        if not obj[&#x27;par&#x27;]:</span></span><br><span class="line"><span class="xml">            root = tree[obj[&#x27;id&#x27;]]</span></span><br><span class="line"><span class="xml">            lists.append(root)</span></span><br><span class="line"><span class="xml">        else:</span></span><br><span class="line"><span class="xml">            parent_id = obj[&#x27;par&#x27;]</span></span><br><span class="line"><span class="xml">            if &#x27;childlist&#x27; not in tree[parent_id]:</span></span><br><span class="line"><span class="xml">                tree[parent_id][&#x27;childlist&#x27;] = []</span></span><br><span class="line"><span class="xml">            tree[parent_id][&#x27;childlist&#x27;].append(tree[obj[&#x27;id&#x27;]])</span></span><br><span class="line"><span class="xml">    return lists</span></span><br></pre></td></tr></table></figure>
-
-
-<h4 id="4-写一个视图函数-接收数据"><a href="#4-写一个视图函数-接收数据" class="headerlink" title="4. 写一个视图函数, 接收数据"></a>4. 写一个视图函数, 接收数据</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">class MyTree(APIView):</span></span><br><span class="line"><span class="xml">    def get(self, request):</span></span><br><span class="line"><span class="xml">        &quot;&quot;&quot;</span></span><br><span class="line"><span class="xml">        查找</span></span><br><span class="line"><span class="xml">        :param request:</span></span><br><span class="line"><span class="xml">        :return:</span></span><br><span class="line"><span class="xml">        &quot;&quot;&quot;</span></span><br><span class="line"><span class="xml">        cai = CaiModel.objects.all()</span></span><br><span class="line"><span class="xml">        ser = CaiSerializers(cai, many=True)</span></span><br><span class="line"><span class="xml">        data = xTree(ser.data)</span></span><br><span class="line"><span class="xml">        return Response(data)</span></span><br></pre></td></tr></table></figure>
-
-
-<h4 id="5-实现"><a href="#5-实现" class="headerlink" title="5. 实现"></a>5. 实现</h4><p><img src="/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/5.1.jpg"></p>
+<p>初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> mounted() &#123;</span><br><span class="line">    var videoElement &#x3D; document.getElementById(&#39;videoElement&#39;);</span><br><span class="line">    var flvPlayer &#x3D; flv.createPlayer(&#123;</span><br><span class="line">      type: &#39;flv&#39;,</span><br><span class="line">      enableWorker: true,     &#x2F;&#x2F;浏览器端开启flv.js的worker,多进程运行flv.js</span><br><span class="line">      isLive: true,           &#x2F;&#x2F;直播模式</span><br><span class="line">      hasAudio: false,        &#x2F;&#x2F;关闭音频</span><br><span class="line">      hasVideo: true,</span><br><span class="line">      &#x2F;&#x2F; cors: true,</span><br><span class="line">      stashInitialSize: 128,</span><br><span class="line">      enableStashBuffer: false, &#x2F;&#x2F;播放flv时，设置是否启用播放缓存，只在直播起作用。</span><br><span class="line">      &#x2F;&#x2F; url: &#39;http:&#x2F;&#x2F;192.168.2.234&#x2F;flv&#x2F;323223618780001&#39;</span><br><span class="line">      &#x2F;&#x2F; url: &#39;http:&#x2F;&#x2F;39.105.79.238:8080&#x2F;live?port&#x3D;1935&amp;app&#x3D;live&amp;stream&#x3D;test&#39;</span><br><span class="line">      url: &#39;http:&#x2F;&#x2F;47.93.48.154:8080&#x2F;live?port&#x3D;1935&amp;app&#x3D;live&amp;stream&#x3D;test&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">    flvPlayer.attachMediaElement(videoElement);</span><br><span class="line">    flvPlayer.load();</span><br><span class="line">    flvPlayer.play();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -517,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/</a>
+                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -728,9 +763,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/">
                     <div class="card-image">
@@ -748,9 +784,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -763,6 +799,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -781,13 +818,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/02/03/Webshell/">
+                <a href="/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/12.jpg" class="responsive-img" alt="Webshell">
+                        <img src="/wangjie-blog/medias/featureimages/18.jpg" class="responsive-img" alt="无限极分类">
                         
-                        <span class="card-title">Webshell</span>
+                        <span class="card-title">无限极分类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -798,7 +835,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
                             </span>
                         <span class="publish-author">
                             
