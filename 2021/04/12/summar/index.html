@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Summarize | 志杰的技术博客</title>
+  <meta name="description" content="day01 用户校验方式  第一种方式:  用户名 + 密码      最不安全  第二种方式:  用户名 + 密钥(token 令牌)  第三种方式:   用户名  + 人脸识别 或者短信验证码 ​     今日需求：  ​    当用户登录时，需要对钉钉机器人中发送验证码，接收到验证码后输入到验证框，否则任何登录都无效。  Ant Desgin的使用 Ant Desgin官方链接  [http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Summarize">
+<meta property="og:url" content="http://v3n.top/2021/04/12/summar/index.html">
+<meta property="og:site_name" content="志杰的技术博客">
+<meta property="og:description" content="day01 用户校验方式  第一种方式:  用户名 + 密码      最不安全  第二种方式:  用户名 + 密钥(token 令牌)  第三种方式:   用户名  + 人脸识别 或者短信验证码 ​     今日需求：  ​    当用户登录时，需要对钉钉机器人中发送验证码，接收到验证码后输入到验证框，否则任何登录都无效。  Ant Desgin的使用 Ant Desgin官方链接  [http">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-12T11:24:28.358Z">
+<meta property="article:modified_time" content="2021-02-12T13:53:51.430Z">
+<meta property="article:author" content="志杰">
+<meta property="article:tag" content="alipay">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://v3n.top/2021/04/12/summar/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="志杰的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">志杰的Blog</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流技术与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%89%E6%96%B9%E5%BA%93/">三方库</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/alipay/" rel="tag">alipay</a><span class="tag-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/alipay/" style="font-size: 13px;">alipay</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/12/summar/" class="title">Summarize</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-12T11:24:28.358Z" itemprop="datePublished">2021-04-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/11/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/" class="title">雪花算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-11T07:31:44.811Z" itemprop="datePublished">2021-04-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/06/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" class="title">使用Websocket实现在线人数统计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-06T13:31:39.699Z" itemprop="datePublished">2021-04-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/06/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="title">Git分支管理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-06T13:01:03.523Z" itemprop="datePublished">2021-04-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" class="title">SQLserver简介</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-03-21T11:16:17.370Z" itemprop="datePublished">2021-03-21</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-summar" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Summarize
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/04/12/summar/" class="article-date">
+	  <time datetime="2021-04-12T11:24:28.358Z" itemprop="datePublished">2021-04-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/alipay/" rel="tag">alipay</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/04/12/summar/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h3><ul>
+<li>用户校验方式</li>
+</ul>
+<pre><code>第一种方式:  用户名 + 密码      最不安全
+
+第二种方式:  用户名 + 密钥(token 令牌)
+
+第三种方式:   用户名  + 人脸识别 或者短信验证码</code></pre>
+<p>​    </p>
+<pre><code>今日需求：
+
+​    当用户登录时，需要对钉钉机器人中发送验证码，接收到验证码后输入到验证框，否则任何登录都无效。</code></pre>
+<ul>
+<li><p>Ant Desgin的使用</p>
+<p>Ant Desgin官方链接 </p>
+<p>[<a target="_blank" rel="noopener" href="https://www.antdv.com/docs/vue/introduce-cn/]">https://www.antdv.com/docs/vue/introduce-cn/]</a>: </p>
+</li>
+</ul>
+<h3 id="Day02"><a href="#Day02" class="headerlink" title="Day02"></a>Day02</h3><ul>
+<li>docker操作容器</li>
+</ul>
+<p>​            docker image pull hello-world</p>
+<p>​            docker image rm 镜像名或镜像id    注：正在运行容器的镜像时无法删除的   </p>
+<p>​    今日需求：</p>
+<p>​            自动识别图片验证码，当用户登录的时候自动输入验证码验证，完成登录功能</p>
+<p>​            </p>
+<h3 id="Day03"><a href="#Day03" class="headerlink" title="Day03"></a>Day03</h3><ul>
+<li>测试接口脚本</li>
+</ul>
+<p>   使用httpx做测试脚本</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import httpx</span><br><span class="line"></span><br><span class="line">from userapp.models import User</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;&#39;  # url地址</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;&#39;username&#39;: &#39;xxx&#39;, &#39;password&#39;: &#39;xxx&#39;&#125;  # 测试数据</span><br><span class="line"></span><br><span class="line">g &#x3D; httpx.get(url)  # 查询</span><br><span class="line"># print(g.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p &#x3D; httpx.post(url, data&#x3D;data)  # post测试</span><br><span class="line"># print(p.text)</span><br><span class="line"></span><br><span class="line">d &#x3D; httpx.delete(url, params&#x3D;&#123;&#39;id&#39;: 12&#125;)  # 删除请求</span><br><span class="line"># print(d.text)</span><br><span class="line"></span><br><span class="line">update &#x3D; httpx.put(url,data&#x3D;data, params&#x3D;&#123;&#39;id&#39;: 14&#125;)  # 修改测试</span><br><span class="line"># print(update.text)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Day04"><a href="#Day04" class="headerlink" title="Day04"></a>Day04</h3><p>​    今日需求： 实现异步编写文件</p>
+<p>  异步写文件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">async def addfile(file):</span><br><span class="line">    await file.write(&#39;Happiness can be found even in the darkest of times\n&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">async def main():</span><br><span class="line">    async with aiofiles.open(&#39;1.txt&#39;, &#39;a&#39;) as f:</span><br><span class="line">        file &#x3D; []</span><br><span class="line">        for i in range(100):</span><br><span class="line">            req &#x3D; addfile(f)</span><br><span class="line">            task &#x3D; asyncio.create_task(req)</span><br><span class="line">            file.append(task)</span><br><span class="line">        await asyncio.gather(*file)</span><br></pre></td></tr></table></figure>
+<h3 id="Day05"><a href="#Day05" class="headerlink" title="Day05"></a>Day05</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">def post(self, request):</span><br><span class="line">    username &#x3D; request.data.get(&#39;username&#39;)</span><br><span class="line">    password &#x3D; request.data.get(&#39;password&#39;)</span><br><span class="line"></span><br><span class="line">    user &#x3D; User.objects.filter(username&#x3D;username).first()</span><br><span class="line"></span><br><span class="line">    if user &#x3D;&#x3D; None:</span><br><span class="line">        return Response(&#123;&#39;msg&#39;: &#39;请输入正确的用户名!&#39;, &#39;code&#39;: 10003&#125;)</span><br><span class="line"></span><br><span class="line">    mr &#x3D; check_password(password, user.password)</span><br><span class="line">    if user and mr:</span><br><span class="line"></span><br><span class="line">        #  实现状态保持</span><br><span class="line">        payload &#x3D; &#123;</span><br><span class="line">            &#39;exp&#39;: datetime.datetime.utcnow() + datetime.timedelta(hours&#x3D;10),</span><br><span class="line">            &#39;uid&#39;: user.id,</span><br><span class="line">        &#125;</span><br><span class="line">        token &#x3D; jwt.encode(payload&#x3D;payload, key&#x3D;SECRET_KEY)</span><br><span class="line">        return Response(&#123;&#39;msg&#39;: &#39;登录成功&#39;, &#39;code&#39;: 10000, &#39;token&#39;: token, &#39;username&#39;: username, &#39;id&#39;: user.id&#125;)</span><br><span class="line"></span><br><span class="line">    else:</span><br><span class="line"></span><br><span class="line">        key &#x3D; &#39;user_%s&#39; % username</span><br><span class="line">        key_black &#x3D; &#39;user_black&#39;</span><br><span class="line"></span><br><span class="line">        # 只要黑名单有该用户直接封杀</span><br><span class="line">        if r.get(key_black) &#x3D;&#x3D; key:</span><br><span class="line">            return Response(&#123;&#39;msg&#39;: &#39;您的账号已经被封禁1分钟!&#39;, &#39;code&#39;: 44444&#125;)</span><br><span class="line">        else:</span><br><span class="line">            # 判断用户是否存在</span><br><span class="line">            if r.keys(key):</span><br><span class="line">                #  五分钟内出现五次以上</span><br><span class="line">                if int(r.get(key)) &gt;&#x3D; 5:</span><br><span class="line">                    r.set(key, 0)  # 清除该用户次数</span><br><span class="line">                    r.set(key_black, key)  # 清除同时加入黑名单</span><br><span class="line">                    r.expire(key_black, 60)  # 并且设置封禁时间</span><br><span class="line">                    return Response(&#123;&#39;msg&#39;: &#39;您的账号已经被封禁1分钟!&#39;, &#39;code&#39;: 44444&#125;)</span><br><span class="line">                # 小于五次次数 做累加</span><br><span class="line">                else:</span><br><span class="line">                    r.incrby(key, 1)</span><br><span class="line">                    return Response(&#123;&#39;msg&#39;: &#39;账号或密码输入错,请重新输入!&#39;, &#39;code&#39;: 10004&#125;)</span><br><span class="line">            # 不存在则存取</span><br><span class="line">            else:</span><br><span class="line">                r.set(key, 1)</span><br><span class="line">                r.expire(key, 300)</span><br><span class="line">                return Response(&#123;&#39;msg&#39;: &#39;账号或密码输入错,请重新输入!&#39;, &#39;code&#39;: 10004&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Day06"><a href="#Day06" class="headerlink" title="Day06"></a>Day06</h3><p>  异步修改用户名</p>
+<p>  封装Redis</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">class MyQueue:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.l &#x3D; []</span><br><span class="line"></span><br><span class="line">    def push(self, x: tuple) -&gt; None:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Push element x to the back of queue.</span><br><span class="line">        :param x:</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        self.l.append(x)</span><br><span class="line"></span><br><span class="line">    def pop(self) -&gt; tuple:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Removes the element from in front of queue and returns that element.</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        self.l &#x3D; sorted(self.l, key&#x3D;lambda k: k[2], reverse&#x3D;True)</span><br><span class="line">        return self.l.pop(0)</span><br><span class="line"></span><br><span class="line">    def empty(self) -&gt; bool:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Returns whether the queue is empty.</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        return not bool(self.l)</span><br><span class="line"></span><br><span class="line">    def clear(self):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Clear all the contents of the queue</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        self.l.clear()</span><br><span class="line">        return</span><br><span class="line"></span><br><span class="line">    def show(self) -&gt; list:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Show current queue</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        return self.l</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 异步修改用户名</span><br><span class="line">def dojob():</span><br><span class="line">    start &#x3D; time.time()</span><br><span class="line">    for i in range(100):</span><br><span class="line">        User.objects.filter(pk&#x3D;4).update(username&#x3D;i)</span><br><span class="line">    end &#x3D; time.time()</span><br><span class="line">    print(&#39;异步时间%s&#39; % (end - start))</span><br><span class="line"></span><br><span class="line">    q &#x3D; RedisQueue(&#39;redisqueue&#39;)</span><br><span class="line">    while 1: </span><br><span class="line">        result &#x3D; q.pop()</span><br><span class="line">        if not result:</span><br><span class="line">            break</span><br><span class="line">        p &#x3D; eval(result.decode())</span><br><span class="line"></span><br><span class="line">        info &#x3D; User.objects.filter(username&#x3D;p[1]).first()</span><br><span class="line">        if info:</span><br><span class="line">            # break</span><br><span class="line">            return Response(&#123;&#39;msg&#39;: &#39;用户名重复&#39;&#125;)</span><br><span class="line"></span><br><span class="line">        User.objects.filter(pk&#x3D;p[0]).update(username&#x3D;p[1])</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<h3 id="Day07"><a href="#Day07" class="headerlink" title="Day07"></a>Day07</h3><p>无限极分类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class WorkTypeModel(models.Model):  # 工单模型</span><br><span class="line">    name &#x3D; models.CharField(max_length&#x3D;54, verbose_name&#x3D;&#39;名称&#39;)</span><br><span class="line">    pid &#x3D; models.ForeignKey(&#39;self&#39;, on_delete&#x3D;models.SET_NULL, null&#x3D;True, blank&#x3D;True)</span><br><span class="line">    appuser &#x3D; models.CharField(max_length&#x3D;54, verbose_name&#x3D;&#39;审批人&#39;)</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line">        return self.name</span><br></pre></td></tr></table></figure>
+<p>树状型展示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def xTree(datas):</span><br><span class="line">    lists &#x3D; []  # 定义空列表</span><br><span class="line">    tree &#x3D; &#123;&#125;  # 定义空字典</span><br><span class="line">    for i in datas:</span><br><span class="line">        item &#x3D; i</span><br><span class="line">        tree[item[&#39;id&#39;]] &#x3D; item</span><br><span class="line"></span><br><span class="line">    for i in datas:</span><br><span class="line">        obj &#x3D; i</span><br><span class="line">        if not obj[&#39;pid&#39;]:</span><br><span class="line">            root &#x3D; tree[obj[&#39;id&#39;]]</span><br><span class="line">            lists.append(root)</span><br><span class="line">        else:</span><br><span class="line">            parent_id &#x3D; obj[&#39;pid&#39;]</span><br><span class="line">            if &#39;children&#39; not in tree[parent_id]:</span><br><span class="line">                tree[parent_id][&#39;children&#39;] &#x3D; []</span><br><span class="line">            tree[parent_id][&#39;children&#39;].append(tree[obj[&#39;id&#39;]])</span><br><span class="line">    return lists</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="Day08"><a href="#Day08" class="headerlink" title="Day08"></a>Day08</h3><h5 id="工单流系统"><a href="#工单流系统" class="headerlink" title="工单流系统"></a>工单流系统</h5><ol>
+<li>工单审核并审</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">class WorkStatus(APIView):</span><br><span class="line">    def post(self, request):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        审核状态</span><br><span class="line">        :param request:</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 同意拒绝状态(1,2)</span><br><span class="line">        status_cate &#x3D; request.data.get(&#39;status&#39;)</span><br><span class="line">        # 工单id</span><br><span class="line">        work_id &#x3D; request.data.get(&#39;id&#39;)</span><br><span class="line">        # 用户id</span><br><span class="line">        user_id &#x3D; int(request.data.get(&#39;user_id&#39;))</span><br><span class="line">        # 工单类型id</span><br><span class="line">        cate_id &#x3D; request.data.get(&#39;cate_id&#39;)</span><br><span class="line"></span><br><span class="line">        worktype &#x3D; WorkTypeModel.objects.filter(pk&#x3D;cate_id).first()  # 根据id查询到审核人</span><br><span class="line"></span><br><span class="line">        sp_id &#x3D; worktype.appuser  # 取出审核人id</span><br><span class="line"></span><br><span class="line">        senhe &#x3D; eval(sp_id)  # 拿到审核人id</span><br><span class="line"></span><br><span class="line">        if status_cate &#x3D;&#x3D; 1:</span><br><span class="line">            if type(senhe[0]) &#x3D;&#x3D; list:</span><br><span class="line">                for i in senhe[0]:</span><br><span class="line">                    WorkOrdersModel.objects.filter(cate_id&#x3D;cate_id).update(status&#x3D;3)</span><br><span class="line">                return Response(&#123;&#39;msg&#39;: &#39;审核成功&#39;, &#39;code&#39;: 10000&#125;)</span><br><span class="line"></span><br><span class="line">            index &#x3D; senhe.index(int(user_id))  # 下标</span><br><span class="line">            if len(senhe) &#x3D;&#x3D; index + 1:</span><br><span class="line">                WorkOrdersModel.objects.filter(cate&#x3D;cate_id).update(status&#x3D;3)</span><br><span class="line">                WorkOrdersModel.objects.filter(cate&#x3D;cate_id).update(right&#x3D;senhe[index])</span><br><span class="line">                return Response(&#123;&#39;msg&#39;: &#39;审核成功&#39;, &#39;code&#39;: 10000&#125;)</span><br><span class="line">            else:</span><br><span class="line">                WorkOrdersModel.objects.filter(cate&#x3D;cate_id).update(right&#x3D;senhe[index + 1])</span><br><span class="line">                return Response(&#123;&#39;msg&#39;: &#39;审核1,成功&#39;, &#39;code&#39;: 10000&#125;)</span><br><span class="line"></span><br><span class="line">        if status_cate &#x3D;&#x3D; 2:</span><br><span class="line">            index &#x3D; senhe.index(int(user_id))  # 下标</span><br><span class="line">            WorkOrdersModel.objects.filter(cate&#x3D;cate_id).update(status&#x3D;1)</span><br><span class="line">            WorkOrdersModel.objects.filter(cate&#x3D;cate_id).update(right&#x3D;senhe[index - 1])</span><br><span class="line"></span><br><span class="line">        return Response(&#123;&#39;msg&#39;: &#39;审核拒绝!&#39;, &#39;code&#39;: 10004&#125;)</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<ol start="2">
+<li>串审</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">class Factory:</span><br><span class="line">    def __init__(self, qid, state):</span><br><span class="line">        self.qingjia &#x3D; WorkOrdersModel.objects.filter(pk&#x3D;qid)</span><br><span class="line">        self.qingjia_info &#x3D; self.qingjia.first()</span><br><span class="line">        self.pid &#x3D; eval(self.qingjia_info.pid)</span><br><span class="line">        self.qid &#x3D; qid  # 关联表里的qid</span><br><span class="line">        self.state &#x3D; state  # 审批状态码</span><br><span class="line"></span><br><span class="line">    # 串审</span><br><span class="line">    def Chuan(self, state):</span><br><span class="line">        if state !&#x3D; 2:</span><br><span class="line">            # 清空当前改申请单的三方关联信息</span><br><span class="line">            WorkCyModel.objects.filter(w_id&#x3D;self.qid).delete()</span><br><span class="line">            # 新建三方关联信息</span><br><span class="line">            WorkCyModel.objects.create(w_id&#x3D;self.qid, pid&#x3D;self.pid)</span><br><span class="line">            self.qingjia.update(uid&#x3D;str(self.pid), state&#x3D;3)</span><br><span class="line">        else:</span><br><span class="line">            # 清空当前改申请单的三方关联信息</span><br><span class="line">            WorkCyModel.objects.filter(w_id&#x3D;self.qid).delete()</span><br><span class="line">            # 新建三方关联信息</span><br><span class="line">            WorkCyModel.objects.create(w_id&#x3D;self.qid, pid&#x3D;self.pid)</span><br><span class="line">            self.qingjia.update(uid&#x3D;str(self.pid), state&#x3D;2)</span><br><span class="line"></span><br><span class="line">    def Bing(self, state):</span><br><span class="line">        if state !&#x3D; 2:</span><br><span class="line">            # 清空当前改申请单的三方关联信息</span><br><span class="line">            WorkCyModel.objects.filter(w_id&#x3D;self.qid).delete()</span><br><span class="line">            # 新建三方关联信息</span><br><span class="line">            for i in self.pid:</span><br><span class="line">                WorkCyModel.objects.create(w_id&#x3D;self.qid, pid&#x3D;i)</span><br><span class="line">            self.qingjia.update(uid&#x3D;self.pid, state&#x3D;3)</span><br><span class="line">        else:</span><br><span class="line">            # 清空当前改申请单的三方关联信息</span><br><span class="line">            WorkCyModel.objects.filter(w_id&#x3D;self.qid).delete()</span><br><span class="line">            # 新建三方关联信息</span><br><span class="line">            for i in self.pid:</span><br><span class="line">                WorkCyModel.objects.create(w_id&#x3D;self.qid, pid&#x3D;i)</span><br><span class="line"></span><br><span class="line">            self.qingjia.update(uid&#x3D;self.pid, state&#x3D;2)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>已读未读消息</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">class NewsAPIView(APIView):</span><br><span class="line">    def post(self, request):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :param request:</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        id &#x3D; request.data.get(&#39;id&#39;)</span><br><span class="line">        user_id &#x3D; request.data.get(&#39;user_id&#39;)</span><br><span class="line">        w_id_id &#x3D; request.data.get(&#39;w_id_id&#39;)</span><br><span class="line"></span><br><span class="line">        WorkNewsModel.objects.filter(pk&#x3D;id, user_id&#x3D;user_id, w_id&#x3D;w_id_id).update(news_status&#x3D;1)</span><br><span class="line"></span><br><span class="line">        # key &#x3D; &#39;wuser%s&#39; % user_id    #Redis 实现已读未读</span><br><span class="line">        # info &#x3D; r.hgetall(key)</span><br><span class="line">        # for key, value in info.items():</span><br><span class="line">        #</span><br><span class="line">        #     j &#x3D; eval(value)</span><br><span class="line">        #</span><br><span class="line">        #     if w_id_id &#x3D;&#x3D; j[&#39;wid&#39;]:  # 判断用户id是否相同</span><br><span class="line">        #</span><br><span class="line">        #         r.hset(&#39;user%s&#39; % user_id, key, str(&#123;&quot;name&quot;: &#39;这是一条请假消息&#39;, &quot;wid&quot;: w_id_id, &quot;uid&quot;: user_id, &quot;status&quot;: 2&#125;))</span><br><span class="line"></span><br><span class="line">        return Response(&#123;&#39;msg&#39;: &#39;已阅!&#39;, &#39;code&#39;: 10000&#125;)</span><br><span class="line"></span><br><span class="line">    def get(self, request):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        消息盒子展示</span><br><span class="line">        :param request:</span><br><span class="line">        :return:</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        id &#x3D; request.GET.get(&#39;id&#39;)  # 登录用户id</span><br><span class="line"></span><br><span class="line">        work &#x3D; WorkNewsModel.objects.filter(user_id&#x3D;id).values().order_by(&#39;-news_status&#39;,</span><br><span class="line">                                                                          &#39;news_time&#39;)  # 按照已读未读状态、按照时间排序</span><br><span class="line">        count &#x3D; WorkNewsModel.objects.filter(user_id&#x3D;id, news_status&#x3D;2).count()  # 状态为未读 当前用户消息数量</span><br><span class="line"></span><br><span class="line">        return Response(&#123;&#39;work&#39;: work, &#39;count&#39;: count&#125;)</span><br><span class="line"></span><br><span class="line">        # Redis 实现展示功能</span><br><span class="line">        # user_id &#x3D; request.GET.get(&#39;id&#39;)</span><br><span class="line">        # key &#x3D; &#39;wuser%s&#39; % user_id</span><br><span class="line">        # info &#x3D; r.hgetall(key)</span><br><span class="line">        # list &#x3D; []</span><br><span class="line">        # count &#x3D; 0</span><br><span class="line">        # for key, value in info.items():</span><br><span class="line">        #</span><br><span class="line">        #     j &#x3D; eval(value)</span><br><span class="line">        #</span><br><span class="line">        #     if value &#x3D;&#x3D; &#39;1&#39;:</span><br><span class="line">        #         count +&#x3D; int(value)</span><br><span class="line">        #</span><br><span class="line">        #     list.append(j)</span><br><span class="line">        #</span><br><span class="line">        # return Response(&#123;&#39;list&#39;: list, &#39;count&#39;: count&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>工单详情</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class GetMyWork(APIView):</span><br><span class="line">   def get(self, request):</span><br><span class="line">       id &#x3D; request.GET.get(&#39;id&#39;)</span><br><span class="line">       workorder &#x3D; WorkOrdersModel.objects.all().filter(right&#x3D;id)</span><br><span class="line"></span><br><span class="line">       list &#x3D; []</span><br><span class="line"></span><br><span class="line">       for i in workorder:  # 遍历工信信息 存入列表</span><br><span class="line">           data &#x3D; &#123;&#125;</span><br><span class="line">           work &#x3D; WorkTypeModel.objects.filter(pk&#x3D;i.cate_id).first()</span><br><span class="line"></span><br><span class="line">           data[&#39;fieldAll&#39;] &#x3D; eval(i.fieldAll)</span><br><span class="line">           data[&#39;status&#39;] &#x3D; i.status</span><br><span class="line">           data[&#39;cate_id&#39;] &#x3D; i.cate_id</span><br><span class="line">           data[&#39;gx&#39;] &#x3D; work.appuser</span><br><span class="line">           data[&#39;xz&#39;] &#x3D; i.approver.username</span><br><span class="line"></span><br><span class="line">           list.append(data)  # 添加到list</span><br><span class="line">        </span><br><span class="line">      return Response(list)</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>增加聊天功能</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">def post(self, request):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    发送信息</span><br><span class="line">    :param request:</span><br><span class="line">    :return:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    num_ &#x3D; random.randint(1, 5000)</span><br><span class="line"></span><br><span class="line">    send_id &#x3D; request.data.get(&#39;send_id&#39;)</span><br><span class="line"></span><br><span class="line">    send_name &#x3D; request.data.get(&#39;send_name&#39;)</span><br><span class="line"></span><br><span class="line">    if send_name &#x3D;&#x3D; &#39;&#39;:  # 当发送者信息为空 返回</span><br><span class="line">        return Response(&#123;&#39;null&#39;&#125;)</span><br><span class="line"></span><br><span class="line">    ChatModel.objects.create(</span><br><span class="line">        send_id_id&#x3D;send_id,</span><br><span class="line">        send_content&#x3D;send_name,</span><br><span class="line">        sui&#x3D;num_</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    user_info &#x3D; &#39;user%s&#39; % num_</span><br><span class="line">    r.hset(user_info, send_id, send_name)</span><br><span class="line">    r.expire(user_info, 120)</span><br><span class="line"></span><br><span class="line">    # Mongodb添加功能</span><br><span class="line">    # datetime_object &#x3D; datetime.datetime.now()  # 当前日期时间</span><br><span class="line"></span><br><span class="line">    # mongo.create_index(&#123;&quot;lastModifiedDate&quot;: 1&#125;, &#123;&quot;expireAfterSeconds&quot;: 120&#125;)  # 设置两分钟自动销毁</span><br><span class="line"></span><br><span class="line">    # mongo.insert(&#123;user_info: send_id, user_info: datetime_object&#125;)  # 将数据存入mongo数据库</span><br><span class="line"></span><br><span class="line">    return Response(&#39;ok&#39;)</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>聊天撤回功能</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">def put(self, request):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    撤回功能</span><br><span class="line">    :param request:</span><br><span class="line">    :return:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    id &#x3D; request.data.get(&#39;id&#39;)  # 消息表id</span><br><span class="line">    send_id &#x3D; request.data.get(&#39;send_id&#39;)  # 发送者id</span><br><span class="line"></span><br><span class="line">    chat &#x3D; ChatModel.objects.filter(pk&#x3D;id).first()</span><br><span class="line"></span><br><span class="line">    user_info &#x3D; &#39;user%s&#39; % chat.sui</span><br><span class="line"></span><br><span class="line">    #  Redis撤回功能</span><br><span class="line">    r_ &#x3D; r.hgetall(user_info)  # 从redis获取消息</span><br><span class="line"></span><br><span class="line">    if r_:  # 获取到后执行撤回操作</span><br><span class="line">        ChatModel.objects.filter(pk&#x3D;id, send_id&#x3D;send_id).update(che&#x3D;1)</span><br><span class="line">        return Response(&#123;&#39;msg&#39;: &#39;已撤回&#39;&#125;)</span><br><span class="line"></span><br><span class="line">    #  mongoDB撤回功能</span><br><span class="line">    # mon &#x3D; mongo.find_one(&#123;user_info: send_id&#125;)</span><br><span class="line">    #</span><br><span class="line">    # if mon:  # 获取到后执行撤回操作</span><br><span class="line">    #     ChatModel.objects.filter(pk&#x3D;id, send_id&#x3D;send_id).update(che&#x3D;1)</span><br><span class="line">    #     return Response(&#123;&#39;msg&#39;: &#39;已撤回&#39;&#125;)</span><br><span class="line"></span><br><span class="line">    return Response(&#123;&#39;msg&#39;: &#39;消息超过2分钟!&#39;, &#39;code&#39;: 10003&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Day09"><a href="#Day09" class="headerlink" title="Day09"></a>Day09</h3><p>今日需求：</p>
+<p>​    需要将聊天系统的数据存入，做到不用刷新页面展示消息，关闭页面消息记录不会消失</p>
+<ul>
+<li><p>客服聊天系统</p>
+<ul>
+<li><p>首先使用Websocket实现长连接 ，将聊天人id和user拼接存入Redis，信息，状态作类型value，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@accept_websocket</span><br><span class="line">def test_websocket(request, pk):</span><br><span class="line">    while 1:</span><br><span class="line">        if request.is_websocket():</span><br><span class="line">            time.sleep(1)</span><br><span class="line">            r_ &#x3D; r.lrange(pk, 0, -1)</span><br><span class="line"></span><br><span class="line">            data1 &#x3D; []</span><br><span class="line">            for i in r_:</span><br><span class="line">                dict1 &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line">                ii &#x3D; eval(i)</span><br><span class="line">                user &#x3D; User.objects.filter(pk&#x3D;ii[1]).first()</span><br><span class="line">                dict1[&#39;user_id&#39;] &#x3D; user.username</span><br><span class="line">                dict1[&#39;cont&#39;] &#x3D; ii[2]</span><br><span class="line">                dict1[&#39;status&#39;] &#x3D; ii[3]</span><br><span class="line">                data1.append(dict1)</span><br><span class="line"></span><br><span class="line">            r_ &#x3D; r.lrange(1, 0, -1)</span><br><span class="line"></span><br><span class="line">            list2 &#x3D; []</span><br><span class="line">            for p in r_:</span><br><span class="line">                dict2 &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line">                pp &#x3D; eval(p)</span><br><span class="line">                dict2[&#39;cont&#39;] &#x3D; pp[1]</span><br><span class="line">                dict2[&#39;status&#39;] &#x3D; pp[2]</span><br><span class="line">                dict2[&#39;uid&#39;] &#x3D; pp[0]</span><br><span class="line">                list2.append(dict2)</span><br><span class="line"></span><br><span class="line">                request.websocket.send(json.dumps(&#123;&#39;data1&#39;: data1, &#39;data2&#39;: list2&#125;))</span><br></pre></td></tr></table></figure></li>
+<li><p>添加信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class add_websocket(APIView):</span><br><span class="line">    def post(self, request):</span><br><span class="line">        id &#x3D; request.data.get(&#39;id&#39;)</span><br><span class="line">        cont &#x3D; request.data.get(&#39;cont&#39;)</span><br><span class="line">        if cont:</span><br><span class="line">            r.lpush(id, str((1, id, cont, 1)))</span><br><span class="line"></span><br><span class="line">        return Response(&#123;&#39;msg&#39;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://v3n.top/2021/04/12/summar/" title="Summarize" target="_blank" rel="external">http://v3n.top/2021/04/12/summar/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">志杰的Blog</span><small class="ml-1x"></small></a></h3>
+        <div>不经历风雨，长不成大树，不受百炼，难以成钢</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/04/11/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/" title="雪花算法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/Alipay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/WeixinPay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

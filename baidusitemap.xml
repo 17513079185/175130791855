@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://v3n.top/2021/04/12/%E7%A9%BA%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2021-04-12</lastmod>
-  </url>
-  <url>
     <loc>http://v3n.top/2021/01/29/%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/</loc>
     <lastmod>2021-04-12</lastmod>
   </url>
@@ -107,5 +103,9 @@
   <url>
     <loc>http://v3n.top/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2021-04-10</lastmod>
+  </url>
+  <url>
+    <loc>http://v3n.top/2021/04/12/summar/</loc>
+    <lastmod>2021-02-12</lastmod>
   </url>
 </urlset> 
