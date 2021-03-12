@@ -481,6 +481,9 @@
 <li><p>Python eval() 函数描述 </p>
 <p>eval() 可以将数据类型进行转换.</p>
 </li>
+<li><p>python的自省机制</p>
+<p>dir() 函数可能是 Python 自省机制中最著名的部分了.</p>
+</li>
 <li><p>异步消费</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 异步消费</span><br><span class="line">import threading</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def dojob():</span><br><span class="line">    q &#x3D; RedisQueue(&#39;redisqueue&#39;)</span><br><span class="line">    while 1:</span><br><span class="line">        result &#x3D; q.pop()</span><br><span class="line">        </span><br><span class="line">        if not result:</span><br><span class="line">            break</span><br><span class="line"></span><br><span class="line">        print(q.pop())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 启动多线程</span><br><span class="line">for index in range(3):</span><br><span class="line">    thread &#x3D; threading.Thread(target&#x3D;dojob)</span><br><span class="line"></span><br><span class="line">    thread.start()</span><br></pre></td></tr></table></figure>
 
@@ -523,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/10/3.9%E6%80%BB%E7%BB%93/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/10/3.9%E6%80%BB%E7%BB%93/</a>
+                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/10/3.10%E6%80%BB%E7%BB%93/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/10/3.10%E6%80%BB%E7%BB%93/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,7 +742,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/03/10/3.9%E6%80%BB%E7%BB%93/">
+                <a href="/wangjie-blog/2021/03/10/3.10%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
                         
