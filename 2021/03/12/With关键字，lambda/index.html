@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="异步发请求, 志杰的Blog">
+    <meta name="keywords" content="With关键字, 志杰的Blog">
     <meta name="description" content="这是志杰的Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>异步发请求 | 志杰的Blog</title>
+    <title>With关键字 | 志杰的Blog</title>
     <link rel="icon" type="image/png" href="/wangjie-blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wangjie-blog/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">异步发请求</h1>
+                    <h1 class="description center-align post-title">With关键字</h1>
                 </div>
             </div>
         </div>
@@ -477,10 +477,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="同步请求"><a href="#同步请求" class="headerlink" title="同步请求"></a>同步请求</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">import httpx</span></span><br><span class="line"><span class="xml">import asyncio</span></span><br><span class="line"><span class="xml">import time</span></span><br><span class="line"></span><br><span class="line"><span class="xml">url = &#x27;http://127.0.0.1:8000/userapp/all/&#x27;  # 记录url</span></span><br><span class="line"></span><br><span class="line"><span class="xml">data = &#123;&#x27;username&#x27;: &#x27;username&#x27;, &#x27;new_of_username&#x27;: &#x27;123&#x27;&#125;  # 参数</span></span><br><span class="line"></span><br><span class="line"><span class="xml">start = time.time()  # 记录开始时间</span></span><br><span class="line"><span class="xml">for i in range(100):</span></span><br><span class="line"><span class="xml">    g = httpx.get(url)  # 展示</span></span><br><span class="line"><span class="xml">    print(g.text)</span></span><br><span class="line"><span class="xml">end = time.time()	# 记录结束时间</span></span><br><span class="line"><span class="xml">print(f&quot;同步请求花费时间：&#123;end - start&#125;&quot;)</span></span><br></pre></td></tr></table></figure>
+                <h3 id="with关键字作用"><a href="#with关键字作用" class="headerlink" title="with关键字作用"></a>with关键字作用</h3><blockquote>
+<p>使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。</p>
+<p>例如file的file.close()方法，无论with中出现任何错误，都会执行file.close（）方法</p>
+</blockquote>
+<blockquote>
+<p>举个例子：比如说写文件，先打开文件，再写入，然后关闭，比较繁琐。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f &#x3D; open(&#39;1.txt&#39;, &#39;a&#39;)  # 打开文件</span><br><span class="line">f.write(&#39;hello&#39;)	# 写入文件</span><br><span class="line">f.close()	# 关闭文件</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">async def Perform(client):</span></span><br><span class="line"><span class="xml">    r = await client.get(url)</span></span><br><span class="line"><span class="xml">    print(r.text)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml">async def main():</span></span><br><span class="line"><span class="xml">    async with httpx.AsyncClient() as client:</span></span><br><span class="line"><span class="xml">        data = []</span></span><br><span class="line"><span class="xml">        for i in range(100):</span></span><br><span class="line"><span class="xml">            info = Perform(client)</span></span><br><span class="line"><span class="xml">            res = asyncio.create_task(info)</span></span><br><span class="line"><span class="xml">            data.append(res)</span></span><br><span class="line"><span class="xml">        await asyncio.gather(*data)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml">start_ = time.time()</span></span><br><span class="line"><span class="xml">asyncio.run(main())</span></span><br><span class="line"><span class="xml">end_ = time.time()</span></span><br><span class="line"><span class="xml">print(f&quot;异步请求花费时间：&#123;end_ - start_&#125;&quot;)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用with关键字是上下文的关键字，将使用的with的对象交给python上下文管理器，</p>
+</blockquote>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">with opne(&#x27;1.txt&#x27;, &#x27;a&#x27;) as f:</span></span><br><span class="line"><span class="xml">	f.Write(’hello&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+
 
                 
             </div>
@@ -507,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/</a>
+                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/With%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Clambda/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/With%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Clambda/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -722,13 +734,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/wangjie-blog/2021/03/12/With%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Clambda/">
+                <a href="/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/10.jpg" class="responsive-img" alt="With关键字">
+                        <img src="/wangjie-blog/medias/featureimages/0.jpg" class="responsive-img" alt="面向对象封装Redis">
                         
-                        <span class="card-title">With关键字</span>
+                        <span class="card-title">面向对象封装Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -771,13 +783,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/">
+                <a href="/wangjie-blog/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/12.jpg" class="responsive-img" alt="Httpx自动化脚本测试">
+                        <img src="/wangjie-blog/medias/featureimages/9.jpg" class="responsive-img" alt="异步发请求">
                         
-                        <span class="card-title">Httpx自动化脚本测试</span>
+                        <span class="card-title">异步发请求</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
