@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="With关键字, 志杰的Blog">
+    <meta name="keywords" content="Python enumerate() 函数、With关键字, 志杰的Blog">
     <meta name="description" content="这是志杰的Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>With关键字 | 志杰的Blog</title>
+    <title>Python enumerate() 函数、With关键字 | 志杰的Blog</title>
     <link rel="icon" type="image/png" href="/wangjie-blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wangjie-blog/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wangjie-blog/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">With关键字</h1>
+                    <h1 class="description center-align post-title">Python enumerate() 函数、With关键字</h1>
                 </div>
             </div>
         </div>
@@ -479,7 +479,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-12
+                    2021-03-18
                 </div>
                 
 
@@ -500,7 +500,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="with关键字作用"><a href="#with关键字作用" class="headerlink" title="with关键字作用"></a>with关键字作用</h3><blockquote>
+                <h4 id="Python-enumerate-函数"><a href="#Python-enumerate-函数" class="headerlink" title="Python enumerate() 函数"></a>Python enumerate() 函数</h4><h5 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h5><p>enumerate()也是一个python的一个内置方法，用于将一个可遍历的对象（比如说列表，元组和字符串）组合成一个索引序列，同时还可以列出数据下标，和数据<br>2.6版本添加start参数</p>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><blockquote>
+<blockquote>
+<p>seasons = [‘猪猪侠’, ‘小胖’, ‘徐必成’]<br>list(enumerate(li))<br>[(0, ‘猪猪侠’), (1, ‘小胖’), (2, ‘徐必成’)]</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p> list(enumerate(li,start=1))  start: 下标从1开始<br>[(1, ‘猪猪侠’), (2, ‘小胖’), (3, ‘徐必成’)]</p>
+</blockquote>
+<h3 id="with关键字作用"><a href="#with关键字作用" class="headerlink" title="with关键字作用"></a>with关键字作用</h3><blockquote>
 <p>使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。</p>
 <p>例如file的file.close()方法，无论with中出现任何错误，都会执行file.close（）方法</p>
 </blockquote>
@@ -514,8 +523,6 @@
 <p>使用with关键字是上下文的关键字，将使用的with的对象交给python上下文管理器，</p>
 </blockquote>
 <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">with opne(&#x27;1.txt&#x27;, &#x27;a&#x27;) as f:</span></span><br><span class="line"><span class="xml">	f.Write(’hello&#x27;)</span></span><br></pre></td></tr></table></figure>
-
-
 
                 
             </div>
@@ -542,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/With%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Clambda/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/With%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Clambda/</a>
+                    <a href="https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/">https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,7 +759,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-03-12T19-46-47',
+        id: '2021-03-18T18-45-21',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -780,17 +787,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/">
+                <a href="/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/0.jpg" class="responsive-img" alt="面向对象封装Redis">
+                        <img src="/wangjie-blog/medias/featureimages/0.jpg" class="responsive-img" alt="Python enumerate() 函数、With关键字">
                         
-                        <span class="card-title">面向对象封装Redis</span>
+                        <span class="card-title">Python enumerate() 函数、With关键字</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -800,9 +808,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -815,6 +823,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -833,13 +842,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/wangjie-blog/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/">
+                <a href="/wangjie-blog/2021/03/17/GITEE%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
                     <div class="card-image">
                         
                         
-                        <img src="/wangjie-blog/medias/featureimages/9.jpg" class="responsive-img" alt="异步发请求">
+                        <img src="/wangjie-blog/medias/featureimages/23.jpg" class="responsive-img" alt="GITEE绑定域名">
                         
-                        <span class="card-title">异步发请求</span>
+                        <span class="card-title">GITEE绑定域名</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,7 +859,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
                             </span>
                         <span class="publish-author">
                             
