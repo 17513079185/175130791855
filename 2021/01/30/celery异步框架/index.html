@@ -503,6 +503,7 @@
 <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">sms = SMS(ACCount_sid, AUTH_TOKEN, AppID)</span></span><br><span class="line"><span class="xml">code = random_code(6)</span></span><br><span class="line"><span class="xml">r.set(phone, code, 60)</span></span><br><span class="line"><span class="xml">datas = [code, &#x27;60s&#x27;]</span></span><br><span class="line"><span class="xml">sms.send.delay(mobile=[phone], datas=datas)</span></span><br></pre></td></tr></table></figure>
 <h4 id="最后启动worker"><a href="#最后启动worker" class="headerlink" title="最后启动worker"></a>最后启动worker</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">python manage.py celery worker</span></span><br></pre></td></tr></table></figure>
 
+
                 
             </div>
             <hr/>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</loc>
+    <lastmod>2021-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/01/30/celery%E5%BC%82%E6%AD%A5%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2021-03-20</lastmod>
+  </url>
+  <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
     <lastmod>2021-03-18</lastmod>
   </url>
@@ -66,10 +74,6 @@
   </url>
   <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/02/01/redis%E5%8F%91%E5%B8%83%E8%80%85%E8%AE%A2%E9%98%85%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2021-02-02</lastmod>
-  </url>
-  <url>
-    <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/01/30/celery%E5%BC%82%E6%AD%A5%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2021-02-02</lastmod>
   </url>
   <url>
