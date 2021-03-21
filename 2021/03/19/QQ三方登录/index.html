@@ -495,16 +495,29 @@
 <p>[<a target="_blank" rel="noopener" href="https://connect.qq.com/manage/index?apptype=web%5D">https://connect.qq.com/manage/index?apptype=web]</a></p>
 </li>
 </ul>
-<h4 id="2-需求操作"><a href="#2-需求操作" class="headerlink" title="2. 需求操作"></a>2. 需求操作</h4><ol>
-<li>进入后创建应用，选择需要创建的应用类型，在弹出的对话框中填写网站或应用的详细资料（名称，域名，回调地址）<br> ！<a href="proje.png"></a></li>
-<li>   创建完应用后你会得到一个APP_ID和一个APP_Key，只有你拿到这两个参数，你才可以后面的操作！</li>
+<h4 id="1-需求操作"><a href="#1-需求操作" class="headerlink" title="1. 需求操作"></a>1. 需求操作</h4><ol>
+<li><p>进入后创建应用，选择需要创建的应用类型，在弹出的对话框中填写网站或应用的详细资料（名称，域名，回调地址）<br> <img src="/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/proje.png"></p>
+<p> <img src="/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/yingyong.png"></p>
+</li>
+<li><p>创建完应用后你会得到一个APP_ID和一个APP_Key，只有你拿到这两个参数，你才可以后面的操作！</p>
+</li>
 </ol>
-<h4 id="3-连接必须无异常"><a href="#3-连接必须无异常" class="headerlink" title="3. 连接必须无异常"></a>3. 连接必须无异常</h4><p>   接入QQ登录时，网站需要和手机不停的Qzonei进行交互，发送请求和接收响应，所以需要保证连接畅通。</p>
-<h4 id="4-QQ登录OAuth2-0的处理步骤："><a href="#4-QQ登录OAuth2-0的处理步骤：" class="headerlink" title="4. QQ登录OAuth2.0的处理步骤："></a>4. QQ登录OAuth2.0的处理步骤：</h4><ol>
+<h4 id="2-连接必须无异常"><a href="#2-连接必须无异常" class="headerlink" title="2. 连接必须无异常"></a>2. 连接必须无异常</h4><p>   接入QQ登录时，网站需要和手机不停的Qzonei进行交互，发送请求和接收响应，所以需要保证连接畅通。</p>
+<h4 id="3-QQ登录OAuth2-0的处理步骤："><a href="#3-QQ登录OAuth2-0的处理步骤：" class="headerlink" title="3. QQ登录OAuth2.0的处理步骤："></a>3. QQ登录OAuth2.0的处理步骤：</h4><ol>
 <li>根据access_token</li>
 <li>获得对应用户身份的openid；</li>
 <li>根据access_token与openid调用OpenAPI，来请求访问用户授权的资源</li>
 </ol>
+<h4 id="4-获取用户的openid"><a href="#4-获取用户的openid" class="headerlink" title="4. 获取用户的openid"></a>4. 获取用户的openid</h4><p>​    请求地址 <a target="_blank" rel="noopener" href="https://graph.qq.com/oauth2.0/me">https://graph.qq.com/oauth2.0/me</a></p>
+<p>​    请求方式: GET</p>
+<p>​    参数: access_token 必填</p>
+<h4 id="5-调用OpenAPI"><a href="#5-调用OpenAPI" class="headerlink" title="5. 调用OpenAPI"></a>5. 调用OpenAPI</h4><p>​    需要的参数: </p>
+<p>​        access_token</p>
+<p>​        oauth_consumer_key:  应用的appid</p>
+<p>​        openid: 用户的id与qq用户名相同的，就是上面获取的openid</p>
+<p>​    返回结果后：获取到用户数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"></span><br><span class="line">    &#39;ret&#39;: &#39;&#39;,</span><br><span class="line"></span><br><span class="line">    &#39;msg&#39;: &#39;&#39;,</span><br><span class="line"></span><br><span class="line">    &#39;nickname&#39;: &#39;&#39;</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="6-下一步"><a href="#6-下一步" class="headerlink" title="6. 下一步"></a>6. 下一步</h4><p>​    获取到用户的access_token和openid后， 调用OpenAPI进行获取用户信息操作.</p>
 
                 
             </div>
