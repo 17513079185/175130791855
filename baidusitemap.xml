@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2021-03-24</lastmod>
+  </url>
+  <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2021-03-21</lastmod>
   </url>
@@ -22,10 +26,6 @@
   </url>
   <url>
     <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/</loc>
-    <lastmod>2021-03-17</lastmod>
-  </url>
-  <url>
-    <loc>https://wang-jie-123.gitee.io/wangjie-blog/wangjie-blog/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2021-03-17</lastmod>
   </url>
   <url>

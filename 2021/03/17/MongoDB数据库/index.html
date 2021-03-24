@@ -497,6 +497,12 @@
 <li>MongoDB支持各种编程语言:RUBY，PYTHON，JAVA，C++，PHP，C#等多种语言。</li>
 <li>MongoDB安装简单。</li>
 </ul>
+<h3 id="Mongdb超时索引介绍"><a href="#Mongdb超时索引介绍" class="headerlink" title="Mongdb超时索引介绍"></a>Mongdb超时索引介绍</h3><p><strong><em>\</em>mongos&gt; db.eventlog.createIndex( { “lastModifiedDate”: 1 }, { expireAfterSeconds: 60 } )**</strong><br><strong><em>\</em>{**</strong><br><strong><em>\</em>“ok” : 1**</strong><br><strong><em>\</em>}**</strong></p>
+<p>\2. 插入4条记录<br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 1”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 2”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 3”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 4”,”lastModifiedDate”:new Date()})</em></p>
+<p>\3. 查询记录</p>
+<p><em>mongos&gt; db.eventlog.find()</em><br><em>{ “_id” : ObjectId(“5a9697a671d2645a6fa3f9cb”), “title” : “mongodb 1”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:02.804Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697aa71d2645a6fa3f9cc”), “title” : “mongodb 2”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:06.393Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697ad71d2645a6fa3f9cd”), “title” : “mongodb 3”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:09.416Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697c671d2645a6fa3f9ce”), “title” : “mongodb 4”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:34.499Z”) }</em></p>
+<p>大概过了90s，再查询<br><em>mongos&gt; db.eventlog.find()</em><br><em>mongos&gt;</em></p>
+<p>果然同时消失了，说明执行超时删除不是实时的，而是60秒执行一次。</p>
 <h3 id="Mongodb数据库安装"><a href="#Mongodb数据库安装" class="headerlink" title="Mongodb数据库安装"></a>Mongodb数据库安装</h3><p>1、Mongodb数据库官网</p>
 <p>[<a href="http://www.mongodb.com]">http://www.mongodb.com]</a>: </p>
 <h3 id="Mongodb基操作"><a href="#Mongodb基操作" class="headerlink" title="Mongodb基操作"></a>Mongodb基操作</h3><p>1、进入数据库命令</p>
