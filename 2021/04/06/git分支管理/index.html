@@ -506,9 +506,7 @@
 <ul>
 <li><p>合并代码</p>
 <ul>
-<li><ol>
-<li> 首先进入master</li>
-</ol>
+<li><p>首先进入master</p>
 <p>合并: git merge 分支名</p>
 <p>合并后:  git push  当前分支</p>
 <p>素质三连</p>
@@ -520,7 +518,7 @@
 
 - 只处理一次冲突
 - 会记录合并的历史记录, 合并的commit 按照提交时间排列展示
--    所有的过程信息更多，可能会提高之后查找问题的难度</code></pre>
+- 所有的过程信息更多，可能会提高之后查找问题的难度</code></pre>
 <ul>
 <li><ol start="2">
 <li><p>mebase 合并特点</p>
@@ -534,7 +532,6 @@
 </ul>
 <h4 id="合并代码总结"><a href="#合并代码总结" class="headerlink" title="合并代码总结:"></a>合并代码总结:</h4><p>  当需要保留详细的合并信息的时候建议使用git merge，特别是需要将分支合并进入master分支时；当发现自己修改某个功能时，频繁进行了git commit提交时，发现其实过多的提交信息没有必要时，可以尝试git rebase。</p>
 <p>​       </p>
-<p>​      </p>
 <h4 id="代码回退"><a href="#代码回退" class="headerlink" title="代码回退"></a>代码回退</h4><p>​    查看日志:  git log</p>
 <p>​    回退到指定版本:  git reset  –hard  日制id</p>
 <p>​    推送:  git push origin HEAD –force</p>
