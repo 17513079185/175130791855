@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <!-- title -->
-
-
-
-
-<!-- keywords -->
-
-
-
-
+<html lang=zh>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
-    <meta name="author" content="志杰">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="志杰">
-    
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="这是志杰的Blog">
-    <meta name="description" content="这是志杰的Blog">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>分类: Alipay | Hexo</title>
+  <meta name="description" content="这是志杰的Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="志杰的Blog">
 <meta property="og:url" content="https://gitee.com/wang-jie-123/categories/Alipay/index.html">
@@ -29,1430 +27,530 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="志杰">
 <meta name="twitter:card" content="summary">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    
-    <title>fi3ework&#39;s Studio</title>
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/wangjie-blog/font/Oswald-Regular.ttf");
-    }
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://gitee.com/wang-jie-123/categories/Alipay/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="志杰的Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/wangjie-blog/css/style.css">
 
-    body {
-        margin: 0;
-    }
-
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
-
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
-
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
-
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-</style>
-
-    <link rel="preload" href= "/wangjie-blog/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/wangjie-blog/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
-
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
-
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
-
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
-
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
-
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
-</script>
-
-    <link rel="icon" href= "/wangjie-blog/assets/favicon.ico" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/wangjie-blog/scripts/main.js" as="script" />
-    <link rel="preload" as="font" href="/wangjie-blog/font/Oswald-Regular.ttf" crossorigin>
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+  
+  
+  
+  
 <meta name="generator" content="Hexo 5.3.0"></head>
 
-    
-    
-<header class="header">
 
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href=/wangjie-blog/>fi3ework's Studio.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style="
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/wangjie-blog/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
 
-
-
-
-
-
-">
-    
-    <!-- 主页  -->
-            
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/wangjie-blog/)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-</div>
-        <script>
- 
-  // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
-  }
-  console.log("userAgent:" + browser.versions.userAgent);
-
-  // callback
-  function fontLoaded() {
-    console.log('font loaded');
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in');
-      }
-    }
-  }
-
-  // UC不支持跨域，所以直接显示
-  function asyncCb(){
-    if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular']
-        },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
-        },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
-        },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
-        },
-        timeout: 5000 // Set the timeout to two seconds
-      });
-    }
-  }
-
-  function asyncErr(){
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
-
-      async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/wangjie-blog/lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="/wangjie-blog/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/04/11/123/" >
-            
-                <span>3.10总结12131</span>
-        </a>
-        <div class="abstract-content">
-            王杰
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/04/06/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" >
-            
-                <span>使用Websocket实现在线人数统计</span>
-        </a>
-        <div class="abstract-content">
-            使用WebSocket实现在线统计人数封装Redis方法 (尽量封装类)123456789101112131415161718192021222324import redis	class MrRedis:	    def __init__(self, **kwargs):        self.__db = redis.Redis(**kwargs)    def set(self, key, value):        self.__db.set(key, value)    def sety(self, key, value, count):  # set方法 + 过期时间   ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/04/06/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" >
-            
-                <span>Git分支管理</span>
-        </a>
-        <div class="abstract-content">
-            为什么使用git分支呢?
-一般情况，master主分支不做开发，master主分支只做生产环境。
-
-开发一般在次分支，因为我们在开发过程中，代码避免出现Bug或者修改部分，这些问题在次分支解决，解决Bug完成后，没有任何问题，合并到master主分支
-
-总之：master主分支只做生产环境，次分支是为了开发建立的，最后次分支没有任何异常，合并到主分支master。
-
-
-分支命令· * 代表你当前所在的分支
-查看所有分支：git    branch  -a
-查看云端分支：git    branch   -r
-拉取分支和代码：git pull  
-切换分支: git checkout 分支名...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" >
-            
-                <span>SQLserver简介</span>
-        </a>
-        <div class="abstract-content">
-            SQL Server数据库sqlserver数据库是一种关系型数据库，他是一个可扩展性、高性能的数据库管理系统
-主要特征
- 高性能设计，可充分利用WindosNT的优势。 （windowsNT指的是微软公司的网络操作系统）
-
- 系统管理先进，支持Windows图形化管理工具，支持本地和远程的系统管理和配置。
-
-处理事务功能强大，极大的可以保证数据的完整性。
-
-
-SQL与SQL Server区别
-SQL是数据库查询语言，是一种用于数据库操作的语言，被作为关系型数据库的标准，能查询，能操作数据库。
-
-SQL Server是微软开发的小型关系数据库管理系统。
-
-Oracle则是大型关系数据库管...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipa一y">alipa一y</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" >
-            
-                <span>QQ三方登录</span>
-        </a>
-        <div class="abstract-content">
-            一、介绍QQ如何实现三方登录
-网站接入地址
-[https://connect.qq.com/manage/index?apptype=web]
-
-
-1. 需求操作
-进入后创建应用，选择需要创建的应用类型，在弹出的对话框中填写网站或应用的详细资料（名称，域名，回调地址） 
- 
-
-创建完应用后你会得到一个APP_ID和一个APP_Key，只有你拿到这两个参数，你才可以后面的操作！
-
-
-2. 连接必须无异常   接入QQ登录时，网站需要和手机不停的Qzonei进行交互，发送请求和接收响应，所以需要保证连接畅通。
-3. QQ登录OAuth2.0的处理步骤：
-根据access_token
-获得对应...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipa一y">alipa一y</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/" >
-            
-                <span>Python enumerate() 函数、With关键字</span>
-        </a>
-        <div class="abstract-content">
-            Python enumerate() 函数描述enumerate()也是一个python的一个内置方法，用于将一个可遍历的对象（比如说列表，元组和字符串）组合成一个索引序列，同时还可以列出数据下标，和数据2.6版本添加start参数
-实例
-
-seasons = [‘猪猪侠’, ‘小胖’, ‘徐必成’]list(enumerate(li))[(0, ‘猪猪侠’), (1, ‘小胖’), (2, ‘徐必成’)]
-
-
-
- list(enumerate(li,start=1))  start: 下标从1开始[(1, ‘猪猪侠’), (2, ‘小胖’), (3, ‘徐必成’)]
-
-with关键字作...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/18/Gitee%E5%9F%9F%E5%90%8D/" >
-            
-                <span>绑定Gitee域名</span>
-        </a>
-        <div class="abstract-content">
-            一：问题描述国内访问Github Pages还是稍微有点慢, 想要加快点访问速度
-二：想要的结果国内访问国内的服务器, 国外访问国外的, 区分对待, 加快访问速度
-三：解决方案Gitee Pages码云 Pages 是一个免费的静态网页托管服务，您可以使用 码云 Pages 托管博客、项目官网等静态网页。如果您使用过 Github Pages 那么您会很快上手使用码云的 Pages服务。目前码云 Pages 支持 Jekyll、Hugo、Hexo编译静态资源。
-四：步骤按步骤注册Gitee账号从Github导入项目, 仓库名称跟归属会自动填充, 先不管
-为了跟Github Pages一样...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" >
-            
-                <span>MongoDB数据库</span>
-        </a>
-        <div class="abstract-content">
-            什么是MongoDB ?MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。
-MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。
-主要特点
-MongoDB 是一个面向文档存储的数据库，操作起来比较简单和容易。
-MongoD...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" >
-            
-                <span>唯一索引与Docker基操</span>
-        </a>
-        <div class="abstract-content">
-            唯一索引
-唯一索引干嘛用的
-应用场景：用户注册的用户名，手机号，邮箱，身份证信息，学号等场景
-
-为什么使用唯一索引
-唯一索引就是该字段数据不能重复，可以有一个为空，只要不重复就可以，与主键不同的是，一张表中只能有一个主键，主键不能为空，使用唯一索引的好处就是可以避免数据重复出现，也是提高了访问速度.
-
-
-Docker操作基本命令
-启动docker服务
-  1systemctl start docker
-
-停止docker服务
-  1systemctl stop docker
-
-重启docker服务
-  1systemctl restart docker
-拉取镜像
-  1docker pu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/" >
-            
-                <span>面向对象封装Redis</span>
-        </a>
-        <div class="abstract-content">
-            封装Redis123456789101112131415import redisclass MyRedis:	def __init__(self, key, **kwargs): 		self.__db = redis.Redis()  #  变量名前加__表示私有变量,外部无法访问		self.key = key		 	def set(self,value):  		self.__db.set(self.key, value)    def get(self):        return self.__db.get(self.key)
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "alipay">alipay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/wangjie-blog/categories/Alipay/page/2/">2</a><a class="page-number" href="/wangjie-blog/categories/Alipay/page/3/">3</a><a class="extend next" rel="next" href="/wangjie-blog/categories/Alipay/page/2/">NEXT &gt;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
-            
-        </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
-        
-    
-        
-            
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/wangjie-blog/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-     
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-    
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top iconfont-archer">&#xe639;</div>
-    <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 26
-        </div>
-        <!-- search  -->
-        
-    </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/10/3.10%E6%80%BB%E7%BB%93/" >3.10总结</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/wangjie-blog/2021/04/11/123/" >3.10总结12131</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/wangjie-blog/2021/04/06/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" >Git分支管理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/" >Python enumerate() 函数、With关键字</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/18/Gitee%E5%9F%9F%E5%90%8D/" >绑定Gitee域名</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/" >Httpx自动化脚本测试</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" >QQ三方登录</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" >SQLserver简介</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" >MongoDB数据库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" >唯一索引与Docker基操</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/03</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/03/Webshell/" >Webshell</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/" >Redis键空间事件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/01/redis%E5%8F%91%E5%B8%83%E8%80%85%E8%AE%A2%E9%98%85%E8%80%85%E6%A8%A1%E5%BC%8F/" >Redis发布者订阅者模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/31/axios%E5%B0%81%E8%A3%85/" >Axios封装</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/30/celery%E5%BC%82%E6%AD%A5%E6%A1%86%E6%9E%B6/" >Celery异步框架</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/06/docker%E6%93%8D%E4%BD%9C%E5%AE%B9%E5%99%A8%E3%80%81%E9%95%9C%E5%83%8F%E3%80%81dockerfile/" >docker操作容器、镜像、dockerfile</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/24</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/24/vue%E6%8B%A6%E6%88%AA%E5%99%A8/" >Vue拦截器</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/27/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6/" >vue父子组件</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/26/vue%E8%B7%AF%E7%94%B1%E9%92%A9%E5%AD%90/" >Vue路由钩子</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/29</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/29/%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/" >三方支付</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/04/06/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" >使用Websocket实现在线人数统计</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/" >异步发请求</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/wangjie-blog/2021/01/28/%E5%BE%AE%E5%8D%9A%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" >微博三方登录</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/" >无限极分类</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/02/05/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/" >视频直播</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/" >面向对象封装Redis</a>
-        </li>
-    
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
     </div>
   </div>
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="alipay"><span class="iconfont-archer">&#xe606;</span>alipay</span>
-    
-        <span class="sidebar-tag-name" data-tags="alipa一y"><span class="iconfont-archer">&#xe606;</span>alipa一y</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
 </div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-        <span class="sidebar-category-name" data-categories="Alipay"><span class="iconfont-archer">&#xe60a;</span>Alipay</span>
-    
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/wangjie-blog/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/wangjie-blog/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/wangjie-blog/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/wangjie-blog/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/wangjie-blog/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/wangjie-blog/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/wangjie-blog/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/wangjie-blog/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wangjie-blog/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/wangjie-blog/categories/Alipay/">Alipay</a><span class="category-list-count">26</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/wangjie-blog/tags/alipay/" rel="tag">alipay</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/wangjie-blog/tags/alipa%E4%B8%80y/" rel="tag">alipa一y</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/wangjie-blog/tags/alipay/" style="font-size: 14px;">alipay</a> <a href="/wangjie-blog/tags/alipa%E4%B8%80y/" style="font-size: 13px;">alipa一y</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wangjie-blog/archives/2021/04/">四月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wangjie-blog/archives/2021/03/">三月 2021</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wangjie-blog/archives/2021/02/">二月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wangjie-blog/archives/2021/01/">一月 2021</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+              </p>
+              <p class="item-title">
+                <a href="/wangjie-blog/2021/04/11/123/" class="title">3.10总结12131</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-10T16:15:59.072Z" itemprop="datePublished">2021-04-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+              </p>
+              <p class="item-title">
+                <a href="/wangjie-blog/2021/04/06/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" class="title">使用Websocket实现在线人数统计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-06T13:31:39.699Z" itemprop="datePublished">2021-04-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+              </p>
+              <p class="item-title">
+                <a href="/wangjie-blog/2021/04/06/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="title">Git分支管理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-06T13:01:03.523Z" itemprop="datePublished">2021-04-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+              </p>
+              <p class="item-title">
+                <a href="/wangjie-blog/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" class="title">SQLserver简介</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-03-21T11:16:17.370Z" itemprop="datePublished">2021-03-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/wangjie-blog/categories/Alipay/">Alipay</a>
+              </p>
+              <p class="item-title">
+                <a href="/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="title">QQ三方登录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-03-19T03:46:52.606Z" itemprop="datePublished">2021-03-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  <article class="content article article-categories article-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">分类: Alipay</h1>
+      <p class="hidden-xs">共 10 篇文章</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/wangjie-blog/categories">All</a></li>
+          
+          <li><a href="/wangjie-blog/categories/Alipay/">Alipay</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="panel panel-default b-no">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapseAlipay" aria-expanded="true">
+              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
+              Alipay
+            </a>
+            <small class="text-muted">(Total 10 articles)</small>
+        </h4>
+    </div>
+    <div id="collapseAlipay" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAlipay">
+        <div class="panel-body">
+            <div class="collection">
+              
+                
+<a href="/wangjie-blog/2021/04/11/123/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-04-10T16:15:59.072Z" itemprop="datePublished">2021-04-11</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 3.10总结12131
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/04/06/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-04-06T13:31:39.699Z" itemprop="datePublished">2021-04-06</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 使用Websocket实现在线人数统计
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/04/06/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-04-06T13:01:03.523Z" itemprop="datePublished">2021-04-06</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> Git分支管理
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-21T11:16:17.370Z" itemprop="datePublished">2021-03-21</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> SQLserver简介
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/19/QQ%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-19T03:46:52.606Z" itemprop="datePublished">2021-03-19</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> QQ三方登录
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/18/Enumerate&&With%E5%85%B3%E9%94%AE%E5%AD%97/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-18T10:45:21.232Z" itemprop="datePublished">2021-03-18</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> Python enumerate() 函数、With关键字
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/18/Gitee%E5%9F%9F%E5%90%8D/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-17T16:27:07.046Z" itemprop="datePublished">2021-03-18</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 绑定Gitee域名
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-17T12:01:22.566Z" itemprop="datePublished">2021-03-17</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> MongoDB数据库
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-17T12:01:22.565Z" itemprop="datePublished">2021-03-17</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 唯一索引与Docker基操
+</a>
+
+
+              
+                
+<a href="/wangjie-blog/2021/03/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85Redis/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2021-03-12T13:09:18.903Z" itemprop="datePublished">2021-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 面向对象封装Redis
+</a>
+
+
+              
+            </div>
+        </div>
+    </div>
 </div>
     </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/wangjie-blog/",
-        author: "志杰"
-    }
+  </article>
+  
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev disabled">
+                <a href="javascript:;">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next">
+                <a href="/wangjie-blog/categories/Alipay/page/2/">
+                    下一页
+                    <i class="icon icon-angle-right"></i>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 1 of 3</div>
+        </div>
+    </nav>
+    
+ 
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/wangjie-blog/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/wangjie-blog/lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="/wangjie-blog/scripts/main.js"></script>
-    <!-- algolia -->
-    
-    <!-- busuanzi  -->
-    
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-     
-    </body>
+
+<script src="/wangjie-blog/js/plugin.min.js"></script>
+
+
+<script src="/wangjie-blog/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/wangjie-blog/',
+        CONTENT_URL: '/wangjie-blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wangjie-blog/js/insight.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
-
-
