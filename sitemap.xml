@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gitee.com/wang-jie-123/2021/04/11/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2021-04-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gitee.com/wang-jie-123/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/</loc>
+    
+    <lastmod>2021-04-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gitee.com/wang-jie-123/2021/03/21/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/</loc>
     
     <lastmod>2021-04-10</lastmod>
@@ -80,13 +94,6 @@
   
   <url>
     <loc>https://gitee.com/wang-jie-123/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/</loc>
-    
-    <lastmod>2021-04-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gitee.com/wang-jie-123/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/</loc>
     
     <lastmod>2021-04-10</lastmod>
     
@@ -201,6 +208,13 @@
   
   <url>
     <loc>https://gitee.com/wang-jie-123/tags/alipay/</loc>
+    <lastmod>2021-04-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitee.com/wang-jie-123/tags/alipa/</loc>
     <lastmod>2021-04-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
