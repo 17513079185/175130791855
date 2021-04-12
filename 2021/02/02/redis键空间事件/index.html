@@ -25,15 +25,15 @@
 <meta property="og:site_name" content="志杰的技术博客">
 <meta property="og:description" content="1. Redis键空间通知事件键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件 2. 开启键空间通知因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。 可以通过修改redis.conf 文件， 或者直接使用 CONFIG SET 命令来开启或关闭键空间通知功能： 当 notify-keyspace-events">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://v3n.top/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
-<meta property="og:image" content="https://v3n.top/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg">
-<meta property="og:image" content="https://v3n.top/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg">
+<meta property="og:image" content="https://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
+<meta property="og:image" content="https://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg">
+<meta property="og:image" content="https://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg">
 <meta property="article:published_time" content="2021-02-02T07:39:11.221Z">
 <meta property="article:modified_time" content="2021-04-10T18:13:15.521Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://v3n.top/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
+<meta name="twitter:image" content="https://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/index.html">
   
@@ -452,9 +452,9 @@
 <h3 id="3-Key过期事件的Redis配置"><a href="#3-Key过期事件的Redis配置" class="headerlink" title="3. Key过期事件的Redis配置"></a>3. Key过期事件的Redis配置</h3><p>这里需要配置 notify-keyspace-events 的参数为 “Ex”。x 代表了过期事件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notify-keyspace-events &quot;Ex&quot;</span><br></pre></td></tr></table></figure>
 <p>保存配置后，重启Redis服务</p>
-<h3 id="4-添加过期事件订阅"><a href="#4-添加过期事件订阅" class="headerlink" title="4. 添加过期事件订阅"></a>4. 添加过期事件订阅</h3><p>开启一个终端，redis-cli 进入 redis 。开始订阅所有操作，等待接收消息。<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg"></p>
-<p>再开启一个终端，redis-cli 进入 redis，新增一个 15秒过期的键 name<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg"></p>
-<p>15秒过期时间到时，另外一边执行了阻塞订阅操作后的终端，有如下信息输<br><img src="/wangjie-blog/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg"></p>
+<h3 id="4-添加过期事件订阅"><a href="#4-添加过期事件订阅" class="headerlink" title="4. 添加过期事件订阅"></a>4. 添加过期事件订阅</h3><p>开启一个终端，redis-cli 进入 redis 。开始订阅所有操作，等待接收消息。<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg"></p>
+<p>再开启一个终端，redis-cli 进入 redis，新增一个 15秒过期的键 name<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg"></p>
+<p>15秒过期时间到时，另外一边执行了阻塞订阅操作后的终端，有如下信息输<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg"></p>
 <p>顺利获取到过期键 name，说明对过期Key信息的订阅是成功的</p>
 
       
