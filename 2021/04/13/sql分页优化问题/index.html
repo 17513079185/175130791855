@@ -26,7 +26,7 @@
 <meta property="og:description" content="当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天实现下sql查询海量数据时的优化功能。实现分页首先呢也是通过算法公式计算出起始位置以及终点位置(页头,页尾) 1234info &#x3D; UserModel.object.all().values() start &#x3D; int(page,1) * size  # 起始位置end &#x3D; page * size   # 终点位置data &#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-13T03:29:35.331Z">
-<meta property="article:modified_time" content="2021-04-13T13:31:24.155Z">
+<meta property="article:modified_time" content="2021-04-13T13:34:36.391Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
@@ -396,7 +396,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where id &gt; start limit start,end</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <p>使用sql语句查询后，接下来演示一下使用orm语句来查询用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.objects.filter(id__gte&#x3D;start).values()[0:10]</span><br></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">User.objects.filter(id__gte=start).values()[0:10]</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
