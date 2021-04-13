@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Httpx自动化脚本测试 | 志杰的技术博客</title>
-  <meta name="description" content="1234567891011121314151617181920212223import httpx# 测试url地址url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;&#39;# 测试提供的参数data &#x3D; &amp;#123;&#39;username&#39;: &#39;username&#39;, &#39;pwd&#39;: pw">
+  <title>关于分页SQL优化问题 | 志杰的技术博客</title>
+  <meta name="description" content="当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。实现分页首先呢也是通过算法公式计算出起始位置以及终点位置(页头,页尾) 1234info &#x3D; UserModel.object.all().values() start &#x3D; int(page,1) * size  # 起始位置end &#x3D; page * size   # 终点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Httpx自动化脚本测试">
-<meta property="og:url" content="http://v3n.top/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="关于分页SQL优化问题">
+<meta property="og:url" content="http://v3n.top/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="志杰的技术博客">
-<meta property="og:description" content="1234567891011121314151617181920212223import httpx# 测试url地址url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;&#39;# 测试提供的参数data &#x3D; &amp;#123;&#39;username&#39;: &#39;username&#39;, &#39;pwd&#39;: pw">
+<meta property="og:description" content="当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。实现分页首先呢也是通过算法公式计算出起始位置以及终点位置(页头,页尾) 1234info &#x3D; UserModel.object.all().values() start &#x3D; int(page,1) * size  # 起始位置end &#x3D; page * size   # 终点">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-12T08:42:03.662Z">
-<meta property="article:modified_time" content="2021-04-10T18:17:24.716Z">
+<meta property="article:published_time" content="2021-04-13T13:31:00.956Z">
+<meta property="article:modified_time" content="2021-04-13T13:31:15.274Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://v3n.top/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/index.html">
+  <link rel="canonical" href="http://v3n.top/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/index.html">
   
     <link rel="alternate" href="/atom.xml" title="志杰的技术博客" type="application/atom+xml">
   
@@ -348,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Httpx脚本测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-sql优化问题" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Httpx自动化脚本测试
+      关于分页SQL优化问题
     </h1>
   
 
@@ -363,14 +363,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/" class="article-date">
-	  <time datetime="2021-03-12T08:42:03.662Z" itemprop="datePublished">2021-03-12</time>
+	<a href="/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" class="article-date">
+	  <time datetime="2021-04-13T13:31:00.956Z" itemprop="datePublished">2021-04-13</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
   </span>
 
         
@@ -382,18 +382,18 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import httpx</span><br><span class="line"></span><br><span class="line"># 测试url地址</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;&#39;</span><br><span class="line"></span><br><span class="line"># 测试提供的参数</span><br><span class="line">data &#x3D; &#123;&#39;username&#39;: &#39;username&#39;, &#39;pwd&#39;: pwd&#125;</span><br><span class="line"></span><br><span class="line"># 增加用户</span><br><span class="line"></span><br><span class="line">httpx.post(url, data&#x3D;data)</span><br><span class="line"></span><br><span class="line"># 删除用户</span><br><span class="line"></span><br><span class="line">httpx.delete(url, params&#x3D;&#123;&#39;id&#39;: id&#125;)</span><br><span class="line"></span><br><span class="line"># 修改用户</span><br><span class="line"></span><br><span class="line">httpx.update(url, data&#x3D;data, params&#x3D;&#123;&#39;id&#39;: id&#125;)</span><br><span class="line"></span><br><span class="line"># 展示用户</span><br><span class="line"></span><br><span class="line">httpx.get(url)</span><br></pre></td></tr></table></figure>
+        <h1 id="当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。"><a href="#当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。" class="headerlink" title="当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。"></a>当我们在项目中的订单或者是用户到达海量数据时，无疑是要进行分页的，今天说下sql查询的优化功能。</h1><h2 id="实现分页"><a href="#实现分页" class="headerlink" title="实现分页"></a>实现分页</h2><p>首先呢也是通过算法公式计算出起始位置以及终点位置(页头,页尾)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">info &#x3D; UserModel.object.all().values() </span><br><span class="line">start &#x3D; int(page,1) * size  # 起始位置</span><br><span class="line">end &#x3D; page * size   # 终点位置</span><br><span class="line">data &#x3D; info[start:end]  # 这里进行切割数据返回给前端</span><br></pre></td></tr></table></figure>
+<p>这样其实已经完成了分页的功能，但是这里面是有坑的，什么坑呢，就是说，你每次查询都要从头开始查询，这就导致你查询的数据量非常大，举个例子吧：比如说你有10万的用户信息，每页十条用户信息，那么你会有1000的页数，当你点击第1000页时，mysql的底层是从头开始查询，一直查询到你点击的1000页的数据，同理：点击999页、998页都是需要从头开始查询，那这样的话是非常浪费时间的，所以说我们可以给它进行sql优化一下。<br><br></p>
+<p>比如说查询用户,我们直接使用where语句加条件，当id&gt;起始位置时让它直接从起始位置开始查询，这样的话直接是从起始位置开始查询的，这样就节省了很大的空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where id &gt; start limit start,end</span><br></pre></td></tr></table></figure>
 
-
-<blockquote>
-<p>以上就是手动测试代码,仅供参考!</p>
-</blockquote>
 
       
     </div>
@@ -403,7 +403,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://v3n.top/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/" title="Httpx自动化脚本测试" target="_blank" rel="external">http://v3n.top/2021/03/12/Httpx%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95/</a>
+      <a href="http://v3n.top/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" title="关于分页SQL优化问题" target="_blank" rel="external">http://v3n.top/2021/04/13/sql%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -449,13 +449,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/03/12/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/" title="异步发请求"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/03/10/3.10%E6%80%BB%E7%BB%93/" title="3.10总结"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/04/13/sql%E5%88%86%E9%A1%B5%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" title="关于分页SQL优化问题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
