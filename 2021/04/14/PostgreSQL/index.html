@@ -17,25 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Redis键空间事件 | 志杰的技术博客</title>
-  <meta name="description" content="1. Redis键空间通知事件键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件 2. 开启键空间通知因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。 可以通过修改redis.conf 文件， 或者直接使用 CONFIG SET 命令来开启或关闭键空间通知功能： 当 notify-keyspace-events">
+  <title>PostgreSQL | 志杰的技术博客</title>
+  <meta name="description" content="前几天在leetcode上做题的时候，无意发现一道这样的需求题,如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。 首先我们先创建下部门表 12345CREATE TABLE department(    id int,     deptname varchar(100),    salary int); 然后的话我们直接给它添加测试数据 12345INSERT INTO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis键空间事件">
-<meta property="og:url" content="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/index.html">
+<meta property="og:title" content="PostgreSQL">
+<meta property="og:url" content="http://v3n.top/2021/04/14/PostgreSQL/index.html">
 <meta property="og:site_name" content="志杰的技术博客">
-<meta property="og:description" content="1. Redis键空间通知事件键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件 2. 开启键空间通知因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。 可以通过修改redis.conf 文件， 或者直接使用 CONFIG SET 命令来开启或关闭键空间通知功能： 当 notify-keyspace-events">
+<meta property="og:description" content="前几天在leetcode上做题的时候，无意发现一道这样的需求题,如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。 首先我们先创建下部门表 12345CREATE TABLE department(    id int,     deptname varchar(100),    salary int); 然后的话我们直接给它添加测试数据 12345INSERT INTO">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
-<meta property="og:image" content="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg">
-<meta property="og:image" content="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg">
-<meta property="article:published_time" content="2021-02-02T07:39:11.221Z">
-<meta property="article:modified_time" content="2021-04-10T18:13:15.521Z">
+<meta property="og:image" content="http://v3n.top/2021/04/14/PostgreSQL/post.png">
+<meta property="og:image" content="http://v3n.top/2021/04/14/PostgreSQL/1.png">
+<meta property="og:image" content="http://v3n.top/2021/04/14/PostgreSQL/2.png">
+<meta property="article:published_time" content="2021-04-14T03:07:29.069Z">
+<meta property="article:modified_time" content="2021-04-14T13:51:20.260Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg">
+<meta name="twitter:image" content="http://v3n.top/2021/04/14/PostgreSQL/post.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/index.html">
+  <link rel="canonical" href="http://v3n.top/2021/04/14/PostgreSQL/index.html">
   
     <link rel="alternate" href="/atom.xml" title="志杰的技术博客" type="application/atom+xml">
   
@@ -352,14 +352,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-redis键空间事件" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PostgreSQL" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Redis键空间事件
+      PostgreSQL
     </h1>
   
 
@@ -367,8 +367,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/" class="article-date">
-	  <time datetime="2021-02-02T07:39:11.221Z" itemprop="datePublished">2021-02-02</time>
+	<a href="/2021/04/14/PostgreSQL/" class="article-date">
+	  <time datetime="2021-04-14T03:07:29.069Z" itemprop="datePublished">2021-04-14</time>
 	</a>
 </span>
         
@@ -386,76 +386,84 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/04/14/PostgreSQL/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="1-Redis键空间通知事件"><a href="#1-Redis键空间通知事件" class="headerlink" title="1. Redis键空间通知事件"></a>1. Redis键空间通知事件</h3><p>键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件</p>
-<h3 id="2-开启键空间通知"><a href="#2-开启键空间通知" class="headerlink" title="2. 开启键空间通知"></a>2. 开启键空间通知</h3><p>因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态。</p>
-<p>可以通过修改<code>redis.conf</code> 文件， 或者直接使用 <code>CONFIG SET</code> 命令来开启或关闭键空间通知功能：</p>
-<p>当 <code>notify-keyspace-events</code> 选项的参数为空字符串时，功能关闭。</p>
-<p>另一方面，当参数不是空字符串时，功能开启。</p>
-<table>
-<thead>
-<tr>
-<th align="left">字符</th>
-<th align="left">发送的通知</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">K</td>
-<td align="left">键空间通知，所有通知以 <code>__keyspace@__</code>为前缀</td>
-</tr>
-<tr>
-<td align="left">E</td>
-<td align="left">键事件通知，所有通知以 <code>__keyevent@__</code> 为前缀</td>
-</tr>
-<tr>
-<td align="left">g</td>
-<td align="left">DEL 、 EXPIRE 、 RENAME 等类型无关的通用命令的通知</td>
-</tr>
-<tr>
-<td align="left">$</td>
-<td align="left">字符串命令的通知</td>
-</tr>
-<tr>
-<td align="left">l</td>
-<td align="left">列表命令的通知</td>
-</tr>
-<tr>
-<td align="left">s</td>
-<td align="left">集合命令的通知</td>
-</tr>
-<tr>
-<td align="left">h</td>
-<td align="left">哈希命令的通知</td>
-</tr>
-<tr>
-<td align="left">z</td>
-<td align="left">有序集合命令的通知</td>
-</tr>
-<tr>
-<td align="left">x</td>
-<td align="left">过期事件：每当有过期键被删除时发送</td>
-</tr>
-<tr>
-<td align="left">e</td>
-<td align="left">驱逐(evict)事件：每当有键因为 maxmemory 政策而被删除时发送</td>
-</tr>
-<tr>
-<td align="left">A</td>
-<td align="left">参数 g$lshzxe 的别名</td>
-</tr>
-</tbody></table>
-<h3 id="3-Key过期事件的Redis配置"><a href="#3-Key过期事件的Redis配置" class="headerlink" title="3. Key过期事件的Redis配置"></a>3. Key过期事件的Redis配置</h3><p>这里需要配置 notify-keyspace-events 的参数为 “Ex”。x 代表了过期事件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notify-keyspace-events &quot;Ex&quot;</span><br></pre></td></tr></table></figure>
-<p>保存配置后，重启Redis服务</p>
-<h3 id="4-添加过期事件订阅"><a href="#4-添加过期事件订阅" class="headerlink" title="4. 添加过期事件订阅"></a>4. 添加过期事件订阅</h3><p>开启一个终端，redis-cli 进入 redis 。开始订阅所有操作，等待接收消息。<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.1.jpg"></p>
-<p>再开启一个终端，redis-cli 进入 redis，新增一个 15秒过期的键 name<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.2.jpg"></p>
-<p>15秒过期时间到时，另外一边执行了阻塞订阅操作后的终端，有如下信息输<br><img src="/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/3.3.jpg"></p>
-<p>顺利获取到过期键 name，说明对过期Key信息的订阅是成功的</p>
+        <h1 id="前几天在leetcode上做题的时候，无意发现一道这样的需求题-如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。"><a href="#前几天在leetcode上做题的时候，无意发现一道这样的需求题-如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。" class="headerlink" title="前几天在leetcode上做题的时候，无意发现一道这样的需求题,如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。"></a>前几天在leetcode上做题的时候，无意发现一道这样的需求题,如何使用一条sql语句查询出所有部门的平均工资以及每个部门个人工资的对比。</h1><p><br><br></p>
+<p>首先我们先创建下部门表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE department(</span><br><span class="line">    id int, </span><br><span class="line">    deptname varchar(100),</span><br><span class="line">    salary int</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>然后的话我们直接给它添加测试数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO department</span><br><span class="line">values(1,&#39;技术部&#39;,13000),</span><br><span class="line">(2,&#39;技术部&#39;,16000),</span><br><span class="line">(3,&#39;行政&#39;,8000),</span><br><span class="line">(4,&#39;行政&#39;,5000)</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>这里是展示数据展示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id | depname | userid | salary</span><br><span class="line">----+---------+--------+--------</span><br><span class="line"> 1 | 技术部  |      1 |  13000</span><br><span class="line"> 2 | 技术部  |      2 |  16000</span><br><span class="line"> 3 | 行政    |      8 |   8000</span><br><span class="line"> 4 | 行政    |      9 |   5000</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>那么怎么实现上面的需求呢？ sql语句可以这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">select department.id,department.depname,department.salary,newtable.avsa</span><br><span class="line"></span><br><span class="line">-&gt; from department</span><br><span class="line"></span><br><span class="line">-&gt; inner join</span><br><span class="line"></span><br><span class="line">-&gt; (</span><br><span class="line"></span><br><span class="line">-&gt; select depname,avg(salary) as avsa from department group by depname</span><br><span class="line"></span><br><span class="line">-&gt; )</span><br><span class="line"></span><br><span class="line">-&gt; as newtable</span><br><span class="line"></span><br><span class="line">-&gt; on department.depname &#x3D; newtable.depname;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>这样的就查询出来了，该题概括mysql知识点也是非常全面，像聚合索引、分组、子查询等都涉及到了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+----+-----------+--------+------------+</span><br><span class="line">| id | depname   | salary | avsa       |</span><br><span class="line">+----+-----------+--------+------------+</span><br><span class="line">|  1 | 技术部    |  15000 | 15500.0000 |</span><br><span class="line">|  2 | 技术部    |  16000 | 15500.0000 |</span><br><span class="line">|  3 | 行政      |   8000 |  6500.0000 |</span><br><span class="line">|  4 | 行政      |   5000 |  6500.0000 |</span><br><span class="line">+----+-----------+--------+------------+</span><br></pre></td></tr></table></figure>
+
+<p><br><br><br><br>小结：这样的话确实是把我们想要的答案查询出来，但是的sql语句未必显得有点麻烦，下面介绍另一款数据库。</p>
+<p><br><br></p>
+<h1 id="PostgreSQL是一种数据库管理系统，支持大部分的SQL标准并且提供了很多其他现代特性，如复杂查询、外键、触发器、视图、事务完整性、多版本并发控制等，并且这款数据库也是免费使用的"><a href="#PostgreSQL是一种数据库管理系统，支持大部分的SQL标准并且提供了很多其他现代特性，如复杂查询、外键、触发器、视图、事务完整性、多版本并发控制等，并且这款数据库也是免费使用的" class="headerlink" title="PostgreSQL是一种数据库管理系统，支持大部分的SQL标准并且提供了很多其他现代特性，如复杂查询、外键、触发器、视图、事务完整性、多版本并发控制等，并且这款数据库也是免费使用的"></a>PostgreSQL是一种数据库管理系统，支持大部分的SQL标准并且提供了很多其他现代特性，如复杂查询、外键、触发器、视图、事务完整性、多版本并发控制等，并且这款数据库也是免费使用的</h1><p><img src="/2021/04/14/PostgreSQL/post.png"></p>
+<p style="font-size:23px">我们直接在Docker上安装<b>PostgreSQL</b>数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres:11.1</span><br></pre></td></tr></table></figure>
+<br>
+<p style="font-size:23px">拉取成功后可以查看下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<br>
+<p style="font-size:23px">然后的话我们就可以启动容器啦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name dev-postgres -e POSTGRES_PASSWORD&#x3D;root -p 5432:5432 postgres:11.1</span><br></pre></td></tr></table></figure>
+<br>
+<p style="font-size:23px">我们直接exec进入容器内部的命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it dev-postgres bash psql -h localhost -U postgres</span><br></pre></td></tr></table></figure>
+
+<br>
+<p style="font-size:23px">在命令行输入 \l 查看数据库列表</p>
+
+<p><img src="/2021/04/14/PostgreSQL/1.png"></p>
+<br>
+<p style="font-size:23px"> 使用数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\c mytest</span><br></pre></td></tr></table></figure>
+<br>
+<p style="font-size:23px"> 建立表</p>
+
+<p><img src="/2021/04/14/PostgreSQL/2.png"></p>
+<br>
+<p style="font-size:23px"> \d查看表</p>
+
+
+
+<br>
+<p style="font-size:23px">over子句的应用，假设我们有一个员工薪资的表（部门、员工id，工资）：
+</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id | depname | userid | salary</span><br><span class="line"> ----+---------+--------+--------</span><br><span class="line"> 1 | 技术部  |      1 |  15000</span><br><span class="line"> 2 | 技术部  |      2 |  20000</span><br><span class="line"> 3 | 行政    |      8 |   4000</span><br><span class="line"> 4 | 行政    |      9 |   8000</span><br></pre></td></tr></table></figure>
+<br>
+
+<p style="font-size:23px">还是根据我们上面的需求题,现在我想将每一个员工的工资与他所在部门的平均工资做个比较，怎么做？来看下如何实现,这也是leetcode原题,
+</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT depname,userid,salary,avg(salary) OVER (PARTITION BY depname) FROM AG;</span><br></pre></td></tr></table></figure>
+    <p style="font-size:23px">
+        查询结果：
+
+<pre><code>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> depname | userid | salary |          avg</span><br><span class="line"> ---------+--------+--------+-----------------------</span><br><span class="line">技术部  |      1 |  15000 |    17500.000000000000</span><br><span class="line">技术部  |      2 |  20000 |    17500.000000000000</span><br><span class="line">行政    |      8 |   4000 | 6000.0000000000000000</span><br><span class="line">行政    |      9 |   8000 | 6000.0000000000000000</span><br></pre></td></tr></table></figure>
+&lt;/p&gt;</code></pre>
+<p style="font-size:23px">
+        使用容器启动数据库会有个问题，就是每次容器停止，数据就会丢失，所有我们可以用docker的挂载命令将数据存在宿主机中，这样就可以持久化保存数据
+</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name dev-postgres -e POSTGRES_PASSWORD&#x3D;root -e PGDATA&#x3D;&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data&#x2F;pgdata</span><br><span class="line">-v &#x2F;custom&#x2F;mount:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data  -p 6432:5432 postgres:11.1</span><br></pre></td></tr></table></figure>
+<br><br>
+<p style="font-size:23px">
+        结论：自从Mysql被Oracle收购的时候，它已经不是开源的最佳选择，所以说可以适当的走向PostgreSQL！
+</p>
+
+
+
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
       
     </div>
@@ -465,7 +473,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/" title="Redis键空间事件" target="_blank" rel="external">http://v3n.top/2021/02/02/redis%E9%94%AE%E7%A9%BA%E9%97%B4%E4%BA%8B%E4%BB%B6/</a>
+      <a href="http://v3n.top/2021/04/14/PostgreSQL/" title="PostgreSQL" target="_blank" rel="external">http://v3n.top/2021/04/14/PostgreSQL/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -511,13 +519,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/02/03/Webshell/" title="Webshell"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/02/01/redis%E5%8F%91%E5%B8%83%E8%80%85%E8%AE%A2%E9%98%85%E8%80%85%E6%A8%A1%E5%BC%8F/" title="Redis发布者订阅者模式"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/04/13/sql%E5%88%86%E9%A1%B5%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" title="关于分页SQL优化问题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
