@@ -26,7 +26,7 @@
 <meta property="og:description" content="关于mysql联合索引的最左前缀原则以及b+tree查询条件要符合最左原则才能使用到索引    首先介绍下联合索引        最重要的一点是覆盖索引，非主键索引会先查到主键索引的值再从主键索引上拿到想要的值，会多一次索引下推，覆盖索引可以直接在非主键索引上拿到对应的值，减少一次查询，     最左查询       也就是说先查询最左边的，在检索数据时从联合索引的最左边开始匹配，类似于给 ind">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-19T11:23:23.856Z">
-<meta property="article:modified_time" content="2021-04-19T12:13:26.688Z">
+<meta property="article:modified_time" content="2021-04-19T12:28:04.509Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
