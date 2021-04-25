@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>唯一索引与Docker基操 | 王杰的技术博客</title>
-  <meta name="description" content="唯一索引 唯一索引干嘛用的 应用场景：用户注册的用户名，手机号，邮箱，身份证信息，学号等场景  为什么使用唯一索引 唯一索引就是该字段数据不能重复，可以有一个为空，只要不重复就可以，与主键不同的是，一张表中只能有一个主键，主键不能为空，使用唯一索引的好处就是可以避免数据重复出现，也是提高了访问速度.   Docker操作基本命令 启动docker服务   1systemctl start dock">
+  <title>MongoDB数据库 | 王杰的技术博客</title>
+  <meta name="description" content="什么是MongoDB ?MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="唯一索引与Docker基操">
-<meta property="og:url" content="http://v3n.top/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/index.html">
+<meta property="og:title" content="MongoDB数据库">
+<meta property="og:url" content="http://v3n.top/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="志杰的技术博客">
-<meta property="og:description" content="唯一索引 唯一索引干嘛用的 应用场景：用户注册的用户名，手机号，邮箱，身份证信息，学号等场景  为什么使用唯一索引 唯一索引就是该字段数据不能重复，可以有一个为空，只要不重复就可以，与主键不同的是，一张表中只能有一个主键，主键不能为空，使用唯一索引的好处就是可以避免数据重复出现，也是提高了访问速度.   Docker操作基本命令 启动docker服务   1systemctl start dock">
+<meta property="og:description" content="什么是MongoDB ?MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-17T12:01:22.565Z">
-<meta property="article:modified_time" content="2021-04-21T06:33:55.342Z">
+<meta property="article:published_time" content="2019-08-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-25T03:02:42.426Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://v3n.top/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/index.html">
+  <link rel="canonical" href="http://v3n.top/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
   
     <link rel="alternate" href="/atom.xml" title="志杰的技术博客" type="application/atom+xml">
   
@@ -248,7 +248,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -282,36 +282,6 @@
                 <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
               </p>
               <p class="item-title">
-                <a href="/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="title">MongoDB数据库</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-03-17T12:01:22.566Z" itemprop="datePublished">2021-03-17</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
-              </p>
-              <p class="item-title">
-                <a href="/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" class="title">唯一索引与Docker基操</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-03-17T12:01:22.565Z" itemprop="datePublished">2021-03-17</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
-              </p>
-              <p class="item-title">
                 <a href="/2021/03/04/sql%E5%88%86%E9%A1%B5%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" class="title">关于分页SQL优化问题</a>
               </p>
               <p class="item-date">
@@ -327,10 +297,40 @@
                 <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
               </p>
               <p class="item-title">
-                <a href="/2021/02/04/%E6%97%A0%E9%99%90%E6%9E%81%E5%88%86%E7%B1%BB/" class="title">无限极分类</a>
+                <a href="/2020/10/23/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/" class="title">异步发请求</a>
               </p>
               <p class="item-date">
-                <time datetime="2021-02-04T07:18:02.782Z" itemprop="datePublished">2021-02-04</time>
+                <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" class="title">使用Websocket实现在线人数统计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">个人总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/11/Webshell/" class="title">Webshell</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-10T16:00:00.000Z" itemprop="datePublished">2020-09-11</time>
               </p>
             </div>
           </li>
@@ -348,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-唯一索引&amp;&amp;Docker基操" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-MongoDB数据库" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      唯一索引与Docker基操
+      MongoDB数据库
     </h1>
   
 
@@ -363,8 +363,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" class="article-date">
-	  <time datetime="2021-03-17T12:01:22.565Z" itemprop="datePublished">2021-03-17</time>
+	<a href="/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+	  <time datetime="2019-08-13T16:00:00.000Z" itemprop="datePublished">2019-08-14</time>
 	</a>
 </span>
         
@@ -382,64 +382,71 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h3><ul>
-<li><p>唯一索引干嘛用的</p>
-<p>应用场景：用户注册的用户名，手机号，邮箱，身份证信息，学号等场景</p>
-</li>
-<li><p>为什么使用唯一索引</p>
-<p>唯一索引就是该字段数据不能重复，可以有一个为空，只要不重复就可以，与主键不同的是，一张表中只能有一个主键，主键不能为空，使用唯一索引的好处就是可以避免数据重复出现，也是提高了访问速度.</p>
-</li>
+        <h2 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB ?"></a>什么是MongoDB ?</h2><p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。</p>
+<p>MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。</p>
+<h3 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h3><ul>
+<li>MongoDB 是一个面向文档存储的数据库，操作起来比较简单和容易。</li>
+<li>MongoDB支持各种编程语言:RUBY，PYTHON，JAVA，C++，PHP，C#等多种语言。</li>
+<li>MongoDB安装简单。</li>
 </ul>
-<h3 id="Docker操作基本命令"><a href="#Docker操作基本命令" class="headerlink" title="Docker操作基本命令"></a>Docker操作基本命令</h3><ul>
-<li><p>启动docker服务</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>停止docker服务</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启docker服务</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></li>
-<li><p>拉取镜像</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看镜像 -a:本地所有镜像  -q: 显示镜像id</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a </span><br></pre></td></tr></table></figure></li>
-<li><p>创建容器 </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-p指定端口映射 -P随机端口映射</span><br><span class="line">docker run -d -p 映射端口:端口号 镜像id	</span><br></pre></td></tr></table></figure></li>
-<li><p>启动容器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器id</span><br></pre></td></tr></table></figure></li>
-<li><p>关闭容器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id</span><br></pre></td></tr></table></figure></li>
-<li><p>重启容器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart 容器id</span><br></pre></td></tr></table></figure></li>
-<li><p>查看正在启动的容器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看所有的容器 </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除镜像</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 镜像id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除容器 参数: -f 强删</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 容器id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看容器日志 </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-f : 查看实时日志</span><br><span class="line">-t : 查看日志产生的日期</span><br><span class="line">docker logs 容器id</span><br></pre></td></tr></table></figure>
-
-
-
-
-</li>
-</ul>
-<p>​<br>​    </p>
-<p>​    </p>
+<h3 id="Mongdb超时索引介绍"><a href="#Mongdb超时索引介绍" class="headerlink" title="Mongdb超时索引介绍"></a>Mongdb超时索引介绍</h3><p><strong><em>\</em>mongos&gt; db.eventlog.createIndex( { “lastModifiedDate”: 1 }, { expireAfterSeconds: 60 } )**</strong><br><strong><em>\</em>{**</strong><br><strong><em>\</em>“ok” : 1**</strong><br><strong><em>\</em>}**</strong></p>
+<p>\2. 插入4条记录<br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 1”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 2”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 3”,”lastModifiedDate”:new Date()})</em><br><em>WriteResult({ “nInserted” : 1 })</em><br><em>mongos&gt; db.eventlog.insert({“title”:”mongodb 4”,”lastModifiedDate”:new Date()})</em></p>
+<p>\3. 查询记录</p>
+<p><em>mongos&gt; db.eventlog.find()</em><br><em>{ “_id” : ObjectId(“5a9697a671d2645a6fa3f9cb”), “title” : “mongodb 1”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:02.804Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697aa71d2645a6fa3f9cc”), “title” : “mongodb 2”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:06.393Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697ad71d2645a6fa3f9cd”), “title” : “mongodb 3”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:09.416Z”) }</em><br><em>{ “_id” : ObjectId(“5a9697c671d2645a6fa3f9ce”), “title” : “mongodb 4”, “lastModifiedDate” : ISODate(“2018-02-28T11:51:34.499Z”) }</em></p>
+<p>大概过了90s，再查询<br><em>mongos&gt; db.eventlog.find()</em><br><em>mongos&gt;</em></p>
+<p>果然同时消失了，说明执行超时删除不是实时的，而是60秒执行一次。</p>
+<h3 id="Mongodb数据库安装"><a href="#Mongodb数据库安装" class="headerlink" title="Mongodb数据库安装"></a>Mongodb数据库安装</h3><p>1、Mongodb数据库官网</p>
+<p>[<a href="http://www.mongodb.com]">http://www.mongodb.com]</a>: </p>
+<h3 id="Mongodb基操作"><a href="#Mongodb基操作" class="headerlink" title="Mongodb基操作"></a>Mongodb基操作</h3><p>1、进入数据库命令</p>
+<blockquote>
+<p>mongodb</p>
+</blockquote>
+<p>2、创建数据库</p>
+<blockquote>
+<p>use 数据库名</p>
+</blockquote>
+<p>3、查看当前数据库</p>
+<blockquote>
+<p>db</p>
+</blockquote>
+<p>4、查看所有数据库</p>
+<blockquote>
+<p>dbs</p>
+</blockquote>
+<p>5、insert() 插入数据</p>
+<blockquote>
+<p>db.workcate.insert({‘name’:’王杰’}) </p>
+<p>db.表名.insert({‘name’:’王杰’}) </p>
+</blockquote>
+<p>6、insertMany() 插入多条数据</p>
+<blockquote>
+<p>db.cao.insertMany([{name:”cao”},{name:”yuan”},{name:”caopeng”}])</p>
+</blockquote>
+<p>7、查看数据</p>
+<blockquote>
+<p>db.表名.find({条件})</p>
+<p>db.表名.find(条件).preety()  # 树状型展示</p>
+</blockquote>
+<p>8、修改表数据</p>
+<blockquote>
+<p>db.表名.update({‘name’：’王杰}，$set：{‘name’：‘王’})</p>
+<p>例子：将所有年龄大于20的改为18</p>
+<p>db.class0.update({age:{$gt:20}},{$set:{age:18}},false,true)</p>
+</blockquote>
+<p>9、查看表名字</p>
+<blockquote>
+<p>db.getCollectionNames()</p>
+</blockquote>
+<p>10、查看数据库名</p>
+<blockquote>
+<p>db.getName()</p>
+</blockquote>
 
       
     </div>
@@ -449,7 +456,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://v3n.top/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/" title="唯一索引与Docker基操" target="_blank" rel="external">http://v3n.top/2021/03/17/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95&&Docker%E5%9F%BA%E6%93%8D/</a>
+      <a href="http://v3n.top/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" title="MongoDB数据库" target="_blank" rel="external">http://v3n.top/2019/08/14/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -496,12 +503,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/03/17/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" title="MongoDB数据库"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/03/30/SQLserver%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/" title="SQLserver简介"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/03/04/sql%E5%88%86%E9%A1%B5%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/" title="关于分页SQL优化问题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/08/03/docker%E6%93%8D%E4%BD%9C%E5%AE%B9%E5%99%A8%E3%80%81%E9%95%9C%E5%83%8F%E3%80%81dockerfile/" title="docker操作容器、镜像、dockerfile"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
