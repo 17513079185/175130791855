@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>使用Websocket实现在线人数统计 | 王杰的技术博客</title>
-  <meta name="description" content="使用WebSocket实现在线统计人数封装Redis方法 (尽量封装类)123456789101112131415161718192021222324import redis	class MrRedis:	    def __init__(self, **kwargs):        self.__db &#x3D; redis.Redis(**kwargs)    def set(self, key,">
+  <title>Alpine作为你Docker的Python开发基础镜像？其实Ubuntu更好一点 | 王杰的技术博客</title>
+  <meta name="description" content="当你想为你的Python开发环境选择一个基础镜像时，大多数人都会选择Alpine，为什么？因为它太小了，仅仅只有 5 MB 左右（对比 Ubuntu 系列镜像接近 100 MB），但事实的真相是，我们选择基础镜像并不是为了体验一下Python语法而已，在此基础上，我们需要调试和安装各种扩展，可能会安装很多三方依赖，甚至预设更多服务，在这种环境下，Alpine就并非是一个很好的选择了，本次我们就来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Websocket实现在线人数统计">
-<meta property="og:url" content="http://v3n.top/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/index.html">
+<meta property="og:title" content="Alpine作为你Docker的Python开发基础镜像？其实Ubuntu更好一点">
+<meta property="og:url" content="http://v3n.top/2021/05/20/Alpine/index.html">
 <meta property="og:site_name" content="志杰的技术博客">
-<meta property="og:description" content="使用WebSocket实现在线统计人数封装Redis方法 (尽量封装类)123456789101112131415161718192021222324import redis	class MrRedis:	    def __init__(self, **kwargs):        self.__db &#x3D; redis.Redis(**kwargs)    def set(self, key,">
+<meta property="og:description" content="当你想为你的Python开发环境选择一个基础镜像时，大多数人都会选择Alpine，为什么？因为它太小了，仅仅只有 5 MB 左右（对比 Ubuntu 系列镜像接近 100 MB），但事实的真相是，我们选择基础镜像并不是为了体验一下Python语法而已，在此基础上，我们需要调试和安装各种扩展，可能会安装很多三方依赖，甚至预设更多服务，在这种环境下，Alpine就并非是一个很好的选择了，本次我们就来">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-25T02:57:20.550Z">
+<meta property="article:published_time" content="2021-05-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-20T08:06:23.800Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://v3n.top/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/index.html">
+  <link rel="canonical" href="http://v3n.top/2021/05/20/Alpine/index.html">
   
     <link rel="alternate" href="/atom.xml" title="志杰的技术博客" type="application/atom+xml">
   
@@ -348,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-在线人数统计" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Alpine" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      使用Websocket实现在线人数统计
+      Alpine作为你Docker的Python开发基础镜像？其实Ubuntu更好一点
     </h1>
   
 
@@ -363,8 +363,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" class="article-date">
-	  <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2021/05/20/Alpine/" class="article-date">
+	  <time datetime="2021-05-19T16:00:00.000Z" itemprop="datePublished">2021-05-20</time>
 	</a>
 </span>
         
@@ -382,19 +382,77 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/20/Alpine/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="使用WebSocket实现在线统计人数"><a href="#使用WebSocket实现在线统计人数" class="headerlink" title="使用WebSocket实现在线统计人数"></a>使用WebSocket实现在线统计人数</h2><h4 id="封装Redis方法-尽量封装类"><a href="#封装Redis方法-尽量封装类" class="headerlink" title="封装Redis方法 (尽量封装类)"></a>封装Redis方法 (尽量封装类)</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">import redis	</span></span><br><span class="line"></span><br><span class="line"><span class="xml">class MrRedis:	</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def __init__(self, **kwargs):</span></span><br><span class="line"><span class="xml">        self.__db = redis.Redis(**kwargs)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def set(self, key, value):</span></span><br><span class="line"><span class="xml">        self.__db.set(key, value)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def sety(self, key, value, count):  # set方法 + 过期时间</span></span><br><span class="line"><span class="xml">        self.__db.set(key, value, count)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def get(self, value):</span></span><br><span class="line"><span class="xml">        return self.__db.get(value)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def sadd(self, key, value):</span></span><br><span class="line"><span class="xml">        self.__db.sadd(key, value)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def scard(self, value):</span></span><br><span class="line"><span class="xml">        return self.__db.scard(value)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def expire(self, key, value):</span></span><br><span class="line"><span class="xml">        self.__db.expire(key, value)</span></span><br></pre></td></tr></table></figure>
+        <p style="font-size:23px">
+当你想为你的Python开发环境选择一个基础镜像时，大多数人都会选择Alpine，为什么？因为它太小了，仅仅只有 5 MB 左右（对比 Ubuntu 系列镜像接近 100 MB），但事实的真相是，我们选择基础镜像并不是为了体验一下Python语法而已，在此基础上，我们需要调试和安装各种扩展，可能会安装很多三方依赖，甚至预设更多服务，在这种环境下，Alpine就并非是一个很好的选择了，本次我们就来分别在Alpine和Ubuntu上来体验一下</p>
+<br>
+<p style="font-size:23px">首先分别拉取Alpine和Ubuntu的镜像：</p>
+<br>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull alpine</span><br></pre></td></tr></table></figure>
+<p style="font-size:23px">拉取完毕后，可以看到，体积上确实差距明显：</p>
 
-<h4 id="使用websocket建立长连接"><a href="#使用websocket建立长连接" class="headerlink" title="使用websocket建立长连接"></a>使用websocket建立长连接</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">@accept_websocket</span></span><br><span class="line"><span class="xml">def test_websocket(request, pk):</span></span><br><span class="line"><span class="xml">    while 1:</span></span><br><span class="line"><span class="xml">        if request.is_websocket():</span></span><br><span class="line"><span class="xml">            time.sleep(0.1)  # 间隔时间返回</span></span><br><span class="line"><span class="xml">   request.websocket.send(json.dumps(&#123;&#x27;count&#x27;: MrRedis().scard(&#x27;set_i&#x27;)&#125;))</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">REPOSITORY                  TAG                   IMAGE ID            CREATED             SIZE</span><br><span class="line">ubuntu                      18.04                 6526a1858e5d        2 weeks ago         64.2MB</span><br><span class="line">alpine                      latest                a24bb4013296        3 months ago        5.57MB</span><br></pre></td></tr></table></figure>
+<p style="font-size:23px">ubuntu占用64mb，而alpine仅仅5.57mb。
 
+<pre><code>但是先别着急，假设我们的python应用需要做一些科学计算，并且将数据以图形的方式展示出来，这时候就需要matplotlib和pandas这两个库的帮助了，先用ubuntu来安装这俩个库，编写Dockerfile.ubuntu</code></pre>
+</p>
 
-<h4 id="实现计算人数"><a href="#实现计算人数" class="headerlink" title="实现计算人数"></a>实现计算人数</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">class MenCount(APIView):</span></span><br><span class="line"></span><br><span class="line"><span class="xml">    def get(self, request):</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        redis_ = MrRedis()</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        if request.META.get(&#x27;HTTP_X_FORWARDED_FOR&#x27;):  # 判断是否为真实IP</span></span><br><span class="line"></span><br><span class="line"><span class="xml">            ip = request.META.get(&quot;HTTP_X_FORWARDED_FOR&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        else:</span></span><br><span class="line"></span><br><span class="line"><span class="xml">            ip = request.META.get(&quot;REMOTE_ADDR&quot;)  # 代理IP</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        if redis_.scard(&quot;set_i&quot;):  # 返回集合中元素的数量</span></span><br><span class="line"></span><br><span class="line"><span class="xml">            redis_.sadd(&#x27;set_i&#x27;, ip)  # 向集合添加元素 重复忽略</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        else:  # 第一次添加</span></span><br><span class="line"></span><br><span class="line"><span class="xml">            redis_.sadd(&#x27;set_i&#x27;, ip)</span></span><br><span class="line"><span class="xml">            redis_.expire(&#x27;set_i&#x27;, 300)  # 设置5分钟不在消失</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        return Response(&#123;&#x27;count&#x27;: redis_.scard(&#x27;set_i&#x27;)&#125;)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FROM python:3.7-slim</span><br><span class="line">RUN pip install --no-cache-dir matplotlib pandas</span><br></pre></td></tr></table></figure>
+<p style="font-size:23px"> 然后运行镜像脚本：
+</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    docker build -f Dockerfile.ubuntu -t &#39;ubuntu-mat&#39; .</span><br><span class="line">&#96;&#96;&#96;    </span><br><span class="line"></span><br><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; 可以看到，编译好的镜像从原先的60mb暴涨到了263mb。</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>liuyue:blog liuyue$ docker images
+REPOSITORY                  TAG                   IMAGE ID            CREATED              SIZE
+ubuntu-mat                  latest                401f0425ce63        About a minute ago   263MB</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; 使用起来没有什么问题。</span><br><span class="line"></span><br><span class="line">    现在，我们来试试Alpine，看看速度和体积上有没有比Ubuntu更具优势</span><br><span class="line"></span><br><span class="line">    编写Dockerfile.alpine:</span><br><span class="line"> </span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>FROM python:3.7-alpine
+RUN pip install --no-cache-dir matplotlib pandas</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; 编译镜像脚本</span><br><span class="line"> </span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>docker build -f Dockerfile.alpine -t &#39;alpine-mat&#39; .</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; </span><br><span class="line">    在编译过程中，我们会发现报错了：</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>liuyue:blog liuyue$ docker build -f Dockerfile.alpine -t &#39;alpine-mat&#39; .
+Sending build context to Docker daemon  112.1kB
+Step 1/2 : FROM python:3.7-alpine
+3.7-alpine: Pulling from library/python
+df20fa9351a1: Pull complete 
+36b3adc4ff6f: Pull complete 
+4db9de03f499: Pull complete 
+cd38a04a61f4: Pull complete 
+6bbb0c43b470: Pull complete 
+Digest: sha256:d1375bf0b889822c603622dc137b24fb7064e6c1863de8cc4262b61901ce4390
+Status: Downloaded newer image for python:3.7-alpine
+---&gt; 078114edb6be
+Step 2/2 : RUN pip install --no-cache-dir matplotlib pandas
+---&gt; Running in 6d3c44420e5c
+Collecting matplotlib
+Downloading matplotlib-3.3.1.tar.gz (38.8 MB)
+    ERROR: Command errored out with exit status 1:
+    command: /usr/local/bin/python -c &#39;import sys, setuptools, tokenize; sys.argv[0] = &#39;&quot;&#39;&quot;&#39;/tmp/pip-install-40p0g06u/matplotlib/setup.py&#39;&quot;&#39;&quot;&#39;; __file__=&#39;&quot;&#39;&quot;&#39;/tmp/pip-install-40p0g06u/matplotlib/setup.py&#39;&quot;&#39;&quot;&#39;;f=getattr(tokenize, &#39;&quot;&#39;&quot;&#39;open&#39;&quot;&#39;&quot;&#39;, open)(__file__);code=f.read().replace(&#39;&quot;&#39;&quot;&#39;\r\n&#39;&quot;&#39;&quot;&#39;, &#39;&quot;&#39;&quot;&#39;\n&#39;&quot;&#39;&quot;&#39;);f.close();exec(compile(code, __file__, &#39;&quot;&#39;&quot;&#39;exec&#39;&quot;&#39;&quot;&#39;))&#39; egg_info --egg-base /tmp/pip-pip-egg-info-zk64hzam
+        cwd: /tmp/pip-install-40p0g06u/matplotlib/</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; </span><br><span class="line">    这是怎么搞的？如果你仔细看上面基于Ubuntu的构建，你会发现它下载三方库的安装包是matplotlib-3.1.2-cp38-cp38-manylinux1_x86_64.whl，这是一个预编译的二进制安装包。而Alpine则只能下载源代码（matplotlib-3.1.2.tar.gz）的压缩包，这就是Alpine的致命问题：标准的Linux安装包在Alpine Linux上根本无法使用。</span><br><span class="line"></span><br><span class="line">    大多数Linux发行版都使用GNU版本的标准C库（glibc），几乎所有基于C语言的脚本语言都需要这个库，包括Python。但Alpine Linux使用的是musl，那些二进制安装包是针对glibc编译的，因此Alpine禁用了Linux安装包支持。现在大多数Python包都在PyPI上包含了二进制安装包，大大加快了安装时间。但是如果你使用的是Alpine Linux，你需要编译你使用的每一个Python包中的所有C源码。</span><br><span class="line"></span><br><span class="line">    这也就意味着你需要自己弄清楚每一个系统库的依赖性。事先编译好需要的依赖，重新改写Dockerfile.alpine:</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>FROM python:3.7-alpine
+RUN apk --update add gcc build-base freetype-dev libpng-dev openblas-dev
+RUN pip install --no-cache-dir matplotlib pandas</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style&#x3D;&quot;font-size:23px&quot;&gt; </span><br><span class="line">再次编译：</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>docker build -f Dockerfile.alpine -t &#39;alpine-mat&#39; .</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>REPOSITORY                  TAG                   IMAGE ID            CREATED              SIZE
+alpine-mat                  latest                601f0425ce63        About a minute ago   873MB</code></pre>
+<pre><code>
+&lt;p style=&quot;font-size:23px&quot;&gt; 
+    可以看到体积已经变成873mb了，Alpine最引以为傲的体积小轻便等特性也已经荡然无存。
+
+    虽然从理论上讲，Alpine使用的musl 内核与其他Linux发行版使用的glibc大多是兼容的，但在实际操作中，这种差异可能会造成各种问题。而当这些问题真的发生时，想解决它们就没那么简单了，比如说Alpine的线程默认堆栈容量较小，这会导致Python崩溃，同时也会影响python应用的运行速度。
+&lt;/p&gt;
+</code></pre>
+
       
     </div>
     <div class="article-footer">
@@ -403,7 +461,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://v3n.top/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/" title="使用Websocket实现在线人数统计" target="_blank" rel="external">http://v3n.top/2020/10/12/%E5%9C%A8%E7%BA%BF%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1/</a>
+      <a href="http://v3n.top/2021/05/20/Alpine/" title="Alpine作为你Docker的Python开发基础镜像？其实Ubuntu更好一点" target="_blank" rel="external">http://v3n.top/2021/05/20/Alpine/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -449,13 +507,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/10/23/%E5%BC%82%E6%AD%A5%E5%8F%91%E8%AF%B7%E6%B1%82/" title="异步发请求"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/09/11/Webshell/" title="Webshell"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/03/27/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/" title="雪花算法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
