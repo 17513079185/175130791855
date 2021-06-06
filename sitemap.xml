@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://v3n.top/2021/06/05/a_id_50/</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://v3n.top/2021/05/20/a_id_20/</loc>
     
     <lastmod>2021-06-05</lastmod>
@@ -172,7 +165,7 @@
 
   <url>
     <loc>http://v3n.top/</loc>
-    <lastmod>2021-06-05</lastmod>
+    <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -180,7 +173,7 @@
   
   <url>
     <loc>http://v3n.top/tags/alipay/</loc>
-    <lastmod>2021-06-05</lastmod>
+    <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -189,7 +182,7 @@
   
   <url>
     <loc>http://v3n.top/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2021-06-05</lastmod>
+    <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
