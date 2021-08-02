@@ -26,7 +26,7 @@
 <meta property="og:description" content="什么是MongoDB ?MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-05T05:39:34.652Z">
+<meta property="article:modified_time" content="2021-08-02T07:50:07.571Z">
 <meta property="article:author" content="志杰">
 <meta property="article:tag" content="alipay">
 <meta name="twitter:card" content="summary">
@@ -447,6 +447,26 @@
 <blockquote>
 <p>db.getName()</p>
 </blockquote>
+<h2 id="mongodb常用查询语句"><a href="#mongodb常用查询语句" class="headerlink" title="mongodb常用查询语句"></a>mongodb常用查询语句</h2><p>1、查询所有记录<br>db.userInfo.find();<br>相当于：select* from userInfo;</p>
+<p>2、查询去掉后的当前聚集集合中的某列的重复数据<br>db.userInfo.distinct(“name”);<br>会过滤掉 name 中的相同数据<br>相当于：select distict name from userInfo;</p>
+<p>3、查询 age = 22 的记录<br>db.userInfo.find({“age”: 22});<br>相当于： select * from userInfo where age = 22;</p>
+<p>4、查询 age &gt; 22 的记录<br>db.userInfo.find({age: {$gt: 22}});<br>相当于：select * from userInfo where age &gt;22;</p>
+<p>5、查询 age &lt; 22 的记录<br>db.userInfo.find({age: {$lt: 22}});<br>相当于：select * from userInfo where age &lt;22;</p>
+<p>6、查询 age &gt;= 25 的记录<br>db.userInfo.find({age: {$gte: 25}});<br>相当于：select * from userInfo where age &gt;= 25;</p>
+<p>7、查询 age &lt;= 25 的记录<br>db.userInfo.find({age: {$lte: 25}});</p>
+<p>8、查询 age &gt;= 23 并且 age &lt;= 26 注意书写格式<br>db.userInfo.find({age: {$gte: 23, $lte: 26}});</p>
+<p>9、查询 name 中包含 mongo 的数据 模糊查询用于搜索<br>db.userInfo.find({name: /mongo/});<br>//相当于%%<br>select * from userInfo where name like ‘%mongo%’;</p>
+<p>10、查询 name 中以 mongo 开头的<br>db.userInfo.find({name: /^mongo/});<br>select * from userInfo where name like ‘mongo%’;</p>
+<p>11、查询指定列 name、age 数据<br>db.userInfo.find({}, {name: 1, age: 1});<br>相当于：select name, age from userInfo;<br>当然 name 也可以用 true 或 false,当用 ture 的情况下河 name:1 效果一样，如果用 false 就<br>是排除 name，显示 name 以外的列信息。</p>
+<p>12、查询指定列 name、age 数据, age &gt; 25<br>db.userInfo.find({age: {$gt: 25}}, {name: 1, age: 1});<br>相当于：select name, age from userInfo where age &gt;25;</p>
+<p>13、按照年龄排序 1 升序 -1 降序<br>升序：db.userInfo.find().sort({age: 1});<br>降序：db.userInfo.find().sort({age: -1});</p>
+<p>14、查询 name = zhangsan, age = 22 的数据<br>db.userInfo.find({name: ‘zhangsan’, age: 22});<br>相当于：select * from userInfo where name = ‘zhangsan’ and age = ‘22’;</p>
+<p>15、查询前 5 条数据<br>db.userInfo.find().limit(5);<br>相当于：selecttop 5 * from userInfo;</p>
+<p>16、查询 10 条以后的数据<br>db.userInfo.find().skip(10);<br>相当于：select * from userInfo where id not in (<br>selecttop 10 * from userInfo<br>);</p>
+<p>17、查询在 5-10 之间的数据<br>db.userInfo.find().limit(10).skip(5);<br>可用于分页，limit 是 pageSize，skip 是第几页*pageSize</p>
+<p>18、or 与 查询<br>db.userInfo.find({$or: [{age: 22}, {age: 25}]});<br>相当于：select * from userInfo where age = 22 or age = 25;</p>
+<p>19、findOne 查询第一条数据<br>db.userInfo.findOne();<br>相当于：selecttop 1 * from userInfo;<br>db.userInfo.find().limit(1);</p>
+<p>20、查询某个结果集的记录条数 统计数量<br>db.userInfo.find({age: {$gte: 25}}).count();<br>相当于：select count(*) from userInfo where age &gt;= 20;<br>如果要返回限制之后的记录数量，要使用 count(true)或者 count(非 0)<br>db.users.find().skip(10).limit(5).count(true);</p>
 
       
     </div>
